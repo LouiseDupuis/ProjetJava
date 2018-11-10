@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_t_KiwOEIEei3tdiM7DV86Q" name="src">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_uQC3YOEIEei3tdiM7DV86Q">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3cDrQOEZEei3tdiM7DV86Q" name="Berline"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8JcAYOEZEei3tdiM7DV86Q" name="Van"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9L14kOEZEei3tdiM7DV86Q" name="Berline"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_U53jYOOnEeiMxspnIV77OA" name="Driver"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_V3paQOOnEeiMxspnIV77OA" name="Customer"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-37gwOOnEeiMxspnIV77OA" name="UberX">
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_AxzzgOOoEeiMxspnIV77OA" name="UberBlack"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__nFs0OOnEeiMxspnIV77OA" name="UberVan"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DxG2MOOoEeiMxspnIV77OA" name="UberPool"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_j934oOOoEeiMxspnIV77OA" name="GPSCoord"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_n-59wOOrEeiMxspnIV77OA" name="Time"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pbXUsOOrEeiMxspnIV77OA" name="TrafficState"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_PKQRwORCEei1KIHY_XfUZw" name="Car"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_Rs0VIORCEei1KIHY_XfUZw" name="People"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_TRgbAORCEei1KIHY_XfUZw" name="Rides"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_VAwyIORCEei1KIHY_XfUZw" name="RideCost"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_fypAUORCEei1KIHY_XfUZw" name="Message"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ksymIORCEei1KIHY_XfUZw" name="MyUberMain"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_thhyMORCEei1KIHY_XfUZw" name="CarFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_x8Ob4ORCEei1KIHY_XfUZw" name="RideFactory"/>
+</uml:Model>
