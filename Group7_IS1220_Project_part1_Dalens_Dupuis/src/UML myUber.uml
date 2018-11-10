@@ -25,14 +25,6 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_LQe8QOUxEeiQIdbm6R-Pcw" name="state"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Gfem0OTuEeiQIdbm6R-Pcw" name="MyUberSyst"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_KKYyUOTuEeiQIdbm6R-Pcw" name="People">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_DVYG4OUxEeiQIdbm6R-Pcw" name="name">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_F4rKEOUxEeiQIdbm6R-Pcw" name="surname">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-  </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_Ll1coOTuEeiQIdbm6R-Pcw" name="Ride"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_PBXvYOTuEeiQIdbm6R-Pcw" name="Car"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_Q9rEAOTuEeiQIdbm6R-Pcw" name="Standard"/>
