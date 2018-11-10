@@ -1,6 +1,8 @@
-/myUberCore/
+/UML myUber.di
+/UML myUber.notation
+/UML myUber.uml
 /myUber/
-/myUberPeople/
-/myUberOthers/
-/myUberRide/
 /myUberCar/
+/myUberOthers/
+/myUberPeople/
+/myUberRide/
