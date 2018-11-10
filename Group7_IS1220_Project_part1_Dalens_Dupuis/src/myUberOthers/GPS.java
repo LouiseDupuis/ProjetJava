@@ -1,4 +1,4 @@
-package myUberCore;
+package myUberOthers;
 
 public class GPS {
 	

@@ -3,7 +3,6 @@
   <packageImport xmi:type="uml:PackageImport" xmi:id="_vFv6kOTdEei3S8Xsr319VA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
-  <packagedElement xmi:type="uml:Class" xmi:id="_07hbIOTdEei3S8Xsr319VA" name="Rides"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_iS9yUOTiEeiUndWPYZFHxQ" name="Customer"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_juTH4OTiEeiUndWPYZFHxQ" name="Message"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_j-lQgOTrEeiUndWPYZFHxQ" name="GPS">
@@ -11,4 +10,19 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
     </ownedAttribute>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DfH0MOTuEeiQIdbm6R-Pcw" name="Date"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_E0uVMOTuEeiQIdbm6R-Pcw" name="Driver"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Gfem0OTuEeiQIdbm6R-Pcw" name="MyUberSyst"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_KKYyUOTuEeiQIdbm6R-Pcw" name="People"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_Ll1coOTuEeiQIdbm6R-Pcw" name="Ride"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_PBXvYOTuEeiQIdbm6R-Pcw" name="Car"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Q9rEAOTuEeiQIdbm6R-Pcw" name="Standard"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_R2zEYOTuEeiQIdbm6R-Pcw" name="Berline"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SgvZQOTuEeiQIdbm6R-Pcw" name="Van"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UE6hwOTuEeiQIdbm6R-Pcw" name="UberX"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_U4ALkOTuEeiQIdbm6R-Pcw" name="UberPool"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VxOSkOTuEeiQIdbm6R-Pcw" name="UberVan"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WrdtQOTuEeiQIdbm6R-Pcw" name="UberBlack"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_ij_acOTuEeiQIdbm6R-Pcw" name="RideCost"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nJBE0OTuEeiQIdbm6R-Pcw" name="TrafficStatus"/>
 </uml:Model>

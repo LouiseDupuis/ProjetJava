@@ -1,11 +1,11 @@
-package myUberCore;
+package myUberPeople;
 
 import java.util.ArrayList;
 
-import myUberCore.GPS;
-import myUberCore.Message;
+import myUberOthers.GPS;
+import myUberOthers.Message;
 
-public class Customer {
+public class Customer implements People {
 
 	private static int counter = 0;
 	private int customerID;
