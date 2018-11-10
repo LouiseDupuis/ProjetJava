@@ -20,8 +20,21 @@ public class Customer implements People {
 		this.customerID=counter;
 		this.name=null;
 		this.surname=null;
-		this.gps= new GPS(0,0);
+		this.gps= new GPS(); 
 	}
+	
+	
+
+	public Customer(String name, String surname) {
+		super();
+		counter++;
+		this.customerID=counter;
+		this.name = name;
+		this.surname = surname;
+		this.gps= new GPS();
+	}
+
+
 
 	public String getName() {
 		return name;
