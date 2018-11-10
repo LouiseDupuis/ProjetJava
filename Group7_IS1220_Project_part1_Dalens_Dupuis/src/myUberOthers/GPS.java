@@ -1,10 +1,13 @@
 package myUberOthers;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class GPS {
 	
 	
-	private double latitude ;
-	private double longitude ;
+	protected double latitude ;
+	protected double longitude ;
 	
 	public GPS(double latitude, double longitude) {
 		super();
@@ -17,6 +20,7 @@ public class GPS {
 		this.latitude = 48.8 + Math.random()*0.1;
 		this.longitude = 2.22 + Math.random()*0.22;
 	}
+	
 
 	public double getLatitude() {
 		return latitude;
@@ -52,7 +56,14 @@ public class GPS {
 			dist = dist * 60 * 1.1515;
 			dist = dist * 1.609344;
 			return (dist);		
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "GPS [latitude=" + latitude + ", longitude=" + longitude + "]";
 	}
 	
-}
+	
+
 }

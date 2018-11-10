@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import myUberOthers.GPS;
+import myUberOthers.GPSRide;
 
 class GPSTest {
+	
 
 	@Test
 	void test() {
@@ -21,5 +23,10 @@ class GPSTest {
 		GPS gps4 = new GPS();
 		System.out.println(gps3.length(gps4));
 	}
-
+	
+	@Test
+	void test2() {
+	GPS endpoint = new GPSRide();
+	System.out.println(endpoint);
+	}
 }
