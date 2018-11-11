@@ -37,4 +37,5 @@
   <packagedElement xmi:type="uml:Interface" xmi:id="_ij_acOTuEeiQIdbm6R-Pcw" name="RideCost"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_nJBE0OTuEeiQIdbm6R-Pcw" name="TrafficStatus"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_8s9BYOUwEeiQIdbm6R-Pcw" name="GPSRide"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_2ZER8OWzEeiQIdbm6R-Pcw" name="DriverState"/>
 </uml:Model>
