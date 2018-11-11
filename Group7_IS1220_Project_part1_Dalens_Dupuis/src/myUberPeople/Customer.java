@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import myUberOthers.GPS;
 import myUberOthers.Message;
 
-public class Customer implements People {
+public class Customer {
 
 	private static int counter = 0;
 	private int customerID;
