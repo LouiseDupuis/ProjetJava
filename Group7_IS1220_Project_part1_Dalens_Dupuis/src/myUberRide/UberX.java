@@ -1,8 +1,11 @@
 package myUberRide;
 
-public class UberX {
+import myUberOthers.GPS;
 
-	public UberX() {
+public class UberX extends Ride {
+
+	public UberX(GPS start, GPS end, Integer nbPassengers) {
+		super(start, end, nbPassengers);
 		// TODO Auto-generated constructor stub
 	}
 
