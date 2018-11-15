@@ -1,6 +1,5 @@
 package myUberPeople;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Driver {
