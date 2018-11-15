@@ -18,11 +18,13 @@ public class ConcreteRideCostVisitor implements RideCostVisitor {
 		
 	};
 	
-	public double rideFare(Ride ride) {
+	/*public double rideFare(Ride ride) {
 		double longueur = ride.start.length(ride.end);
 		double basicRate = 1;
-		if
+		if (longueur <=5) {
+			basicRate = visit(ride).get("a") * longueur ;
+			}
+	*/
+		
 		
 	}
-
-}
