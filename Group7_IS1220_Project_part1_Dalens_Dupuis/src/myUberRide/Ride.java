@@ -4,8 +4,8 @@ import myUberOthers.GPS;
 
 public class Ride {
 	
-	private GPS start ;
-	private GPS end ;
+	protected GPS start ;
+	protected GPS end ;
 	
 	private Integer nbPassengers ; 
 	
@@ -17,6 +17,8 @@ public class Ride {
 		this.end = end;
 		this.nbPassengers = nbPassengers;
 		this.state = RideStatus.UNCONFIRMED ;
+	
+	
 	} 
 	
 	
