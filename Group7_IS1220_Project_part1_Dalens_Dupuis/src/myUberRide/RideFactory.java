@@ -7,16 +7,16 @@ import myUberOthers.GPS;
 
 public class RideFactory {
 	
-	public Ride createRide( RideType typeOfRide, GPS start, GPS end, Integer nbPassagers ) {
-		if ( typeOfRide == RideType.UBERX && nbPassagers <= 4) {
+	public Ride createRide( String typeOfRide, GPS start, GPS end, Integer nbPassagers ) {
+		if ( typeOfRide.equalsIgnoreCase("UBERX") && nbPassagers <= 4) {
 			return new UberX( start, end, nbPassagers);
 			
-		} else if ( typeOfRide == RideType.UBERVAN && nbPassagers <= 6) {
+		} else if ( typeOfRide.equalsIgnoreCase("UBERVAN") && nbPassagers <= 6) {
 			return new UberVan( start, end, nbPassagers);
 			
-		} else if ( typeOfRide == RideType.UBERBLACK && nbPassagers <= 4) {
+		} else if ( typeOfRide.equalsIgnoreCase("UBERBLACK") && nbPassagers <= 4) {
 			return new UberBlack( start, end, nbPassagers);
-		}else if ( typeOfRide == RideType.UBERPOOL && nbPassagers <= 4) {
+		}else if ( typeOfRide.equalsIgnoreCase("UBERPOOL") && nbPassagers <= 4) {
 			return new UberPool( start, end, nbPassagers);
 		}
 		
