@@ -1,8 +1,11 @@
 package myUberRide;
 import java.util.*;
 
+import myUberOthers.Tuple;
+
+
 public interface RideCostVisitor {
 	
-public Map<String,Double> visit(UberX uberx);
+public double visit(UberX uberx);
 
 }
