@@ -19,8 +19,13 @@ public class RideFactory {
 		}else if ( typeOfRide.equalsIgnoreCase("UBERPOOL") && nbPassagers <= 4) {
 			return new UberPool( start, end, nbPassagers);
 		}
-		
 		return null; 
 	}
+
+	public RideFactory() {
+		
+	}
+	
+	 
 
 }

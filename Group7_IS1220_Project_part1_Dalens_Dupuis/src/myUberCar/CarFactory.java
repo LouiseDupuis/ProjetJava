@@ -18,6 +18,17 @@ public class CarFactory {
 			
 			System.out.println("Impossible to create a " + typeofCar);
 			return null; 
+		}
+			
+		public Car createRandomCar() {
+			int r = (int) (Math.random()*3);
+			if (r == 0) {
+				return new Standard();
+			}else if (r==1) {
+				return new Van();
+			}else {
+				return new Berline();
+			}
+		}
 		
 	}
-}

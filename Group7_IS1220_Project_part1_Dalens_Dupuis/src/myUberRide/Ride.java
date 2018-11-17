@@ -19,7 +19,14 @@ public class Ride {
 		this.state = RideStatus.UNCONFIRMED ;
 	
 	
+	}
+
+	@Override
+	public String toString() {
+		return "Ride [start=" + start + ", end=" + end + ", nbPassengers=" + nbPassengers + ", state=" + state + "]";
 	} 
+	
+	
 	
 	
 	

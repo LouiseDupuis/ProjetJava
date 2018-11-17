@@ -2,6 +2,8 @@ package myUberPeople;
 
 import java.util.Scanner;
 
+import myUberCar.Car;
+
 public class Driver {
 	/**
 	 * Driver class
@@ -21,17 +23,27 @@ public class Driver {
 	public double balance;  // balance in the account
 	public int nbRide;    // number of rides done by the driver
 	
+	
 	// Constructor
 	public Driver() {
 		// Creation of a driver
 		counter++;
 		this.driverID=counter;
-		this.state= DriverState.OFFLINE;
 		this.name="John";
 		this.surname="Doe";
 		this.balance=0.0;
 		this.nbRide=0;
 		//drivers.add(this);
+		
+		// adds a random state for the driver
+		int r = (int) (Math.random()*3);
+		if (r == 0) {
+			this.state = DriverState.OFFLINE;
+		}else if (r==1) {
+			this.state = DriverState.ONDUTY;
+		}else {
+			this.state = DriverState.OFFDUTY;
+		}
 	}
 	
 	public void Parameters() {
