@@ -3,6 +3,11 @@ package myUberPeople;
 import java.util.Scanner;
 
 public class Driver {
+	/**
+	 * Driver class
+	 * @author Ariane Dalens
+	 * @version 0.2
+	 */
 	
 	//public static ArrayList<Driver> drivers;    // list of all drivers 
 	public static int counter = 0;  // count of drivers in the system

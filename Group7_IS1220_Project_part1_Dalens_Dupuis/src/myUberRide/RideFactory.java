@@ -2,8 +2,8 @@ package myUberRide;
 
 import myUberOthers.GPS;
 
-// cette classe permet de créer un ride pas encore confirmé en spécifiant le type, 
-// le début et la fin et le nombre de passagers 
+// cette classe permet de creer un ride pas encore confirme en specifiant le type, 
+// le debut et la fin et le nombre de passagers 
 
 public class RideFactory {
 	

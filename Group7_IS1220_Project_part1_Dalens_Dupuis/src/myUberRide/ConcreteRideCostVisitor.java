@@ -2,12 +2,12 @@ package myUberRide;
 import java.util.*;
 import myUberOthers.*;
 
-// Cette classe est celle qui calcule concrètement le prix d'une course
+// Cette classe est celle qui calcule concretement le prix d'une course
 
 
 public class ConcreteRideCostVisitor implements RideCostVisitor {
 	
-	// pour régler le problème du traffic, pour l'instant on utilise un attribut du visitor 
+	// pour regler le probleme du traffic, pour l'instant on utilise un attribut du visitor 
 	
 	public TrafficStatus trafficState; 
 	
@@ -17,7 +17,7 @@ public class ConcreteRideCostVisitor implements RideCostVisitor {
 		this.trafficState = trafficState;
 	}
 
-	// la méthode visit retourne le prix du ride
+	// la methode visit retourne le prix du ride
 	
 	public double visit(UberX uberx) { 
 		double longueur = uberx.start.length(uberx.end);

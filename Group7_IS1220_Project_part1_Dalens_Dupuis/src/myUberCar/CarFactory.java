@@ -16,6 +16,7 @@ public class CarFactory {
 
 			}
 			
+			System.out.println("Impossible to create a " + typeofCar);
 			return null; 
 		
 	}

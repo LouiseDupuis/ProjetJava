@@ -1,6 +1,6 @@
 package myUberOthers;
 
-// litérallement juste une classe pour stocker des tuples de 2 éléments 
+// literallement juste une classe pour stocker des tuples de 2 elements 
 
 public class Tuple {
 	public double x;
