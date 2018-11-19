@@ -11,24 +11,31 @@ class myUberTest {
 	@Test
 	final void testMyUberIntInt() {
 		myUber univers = new myUber(4,4);
-		System.out.println(univers);
+		assertTrue(univers.nbcars == univers.nbdrivers );
+		assertTrue(univers.nbcars == univers.nbcustomers );
+		assertTrue(univers.nbdrivers == 4 );
 	}
 
 	@Test
 	final void testMyUber() {
 		myUber univers = new myUber();
-		System.out.println(univers);
 		
 	}
 
 	@Test
 	final void testInitiation() {
 		myUber univers = new myUber();
-		System.out.println(univers);
-		System.out.println(univers.customerList);
 		
 		univers.initiation();
-		System.out.println(univers.carList);
+	}
+	
+	@Test
+	final void testRequestRide() {
+		myUber univers = new myUber();
+		System.out.println(univers);
+		univers.requestRide();
+		System.out.println(univers.requestedRides);
+		
 	}
 
 }
