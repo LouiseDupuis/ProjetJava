@@ -1,6 +1,7 @@
 package myUberRide;
 import java.util.*;
 import myUberOthers.*;
+import myUberPeople.Customer;
 
 // Cette classe est celle qui calcule concretement le prix d'une course
 
@@ -122,6 +123,33 @@ public class ConcreteRideCostVisitor implements RideCostVisitor {
 		return rate *  tRate * longueur ;
 		
 	};
+	
+	// this method returns the list of different prices for various rides available
+	
+	public Map<String,Double> priceList(Customer customer, GPS end, int nbPassenger){
+       Map<String,Double> priceList = new HashMap<>();
+	    
+	    if (nbPassenger<= 4) {
+	    	UberX uberx = new UberX(customer.getGps(),end,nbPassenger);
+	    	UberBlack uberblack = new UberBlack(customer.getGps(),end,nbPassenger);
+	    	UberPool uberpool = new UberPool(customer.getGps(),end,nbPassenger);
+	    	UberVan ubervan = new UberVan(customer.getGps(),end,nbPassenger);
+	    	
+	    	
+	    	
+	    	priceList.put("UberX",this.visit(uberx));
+	    	priceList.put("UberBlack",this.visit(uberblack));
+	    	priceList.put("UberPool",this.visit(uberpool));
+	    	priceList.put("UberVan",this.visit(ubervan));
+	    }else {
+            UberVan ubervan = new UberVan(customer.getGps(),end,nbPassenger);
+	    	
+	    	
+	    	priceList.put("UberVan",this.visit(ubervan));
+	    }
+	    
+	    return priceList;
+	}
 	
 		
 		

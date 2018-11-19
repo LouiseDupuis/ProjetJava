@@ -1,16 +1,22 @@
 package myUberOthers;
 
-// literallement juste une classe pour stocker des tuples de 2 elements 
+// a class to create 4 elements tuples
 
 public class Tuple {
-	public double x;
-	public double y;
+	public double a;
+	public double b;
+	public double c;
+	public double d;
 	
-	public Tuple(double x, double y) {
+	public Tuple(double a, double b, double c, double d) {
 		super();
-		this.x = x;
-		this.y = y;
-	};
+		this.a = a;
+		this.b = b;
+		this.c = c;
+		this.d = d;
+	}
+	
+	
 	
 	
 

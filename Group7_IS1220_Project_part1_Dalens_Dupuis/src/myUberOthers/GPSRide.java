@@ -10,7 +10,7 @@ public class GPSRide extends GPS {
 	public GPSRide() {
 
 			Scanner scan = new Scanner(System.in);
-			Double input;
+			double input;
 			System.out.println("What is the latitude of the end point [48,8 - 48,9]: ");
 			while (true){
 			   if (scan.hasNextDouble()){
@@ -27,8 +27,8 @@ public class GPSRide extends GPS {
 			System.out.println("What is the longitude of the end point [2,22 - 2,44]: ");
 			while (true){
 			if (scan.hasNextDouble()){
-	             input = scan.nextDouble();// Assign the next integer to a variable
-	             if (input  <= 2.44 && input >= 2.22 ){ // Check if integer meets condition
+	             input = scan.nextDouble();// Assign the next double to a variable
+	             if (input  <= 2.44 && input >= 2.22 ){ // Check if double meets condition
 	            	 this.longitude=input; 
 	            	 break; // Condition met, break out of loop
 	            }
@@ -36,8 +36,9 @@ public class GPSRide extends GPS {
 	              scan.next();
 	        }
 	        System.out.println("Please enter a valid number between 2,22 and 2,44 we only take rides in Paris ! : ");
+	        scan.close();
 	    }
-			scan.close();
+			
 		}
 
 	}
