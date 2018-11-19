@@ -16,9 +16,9 @@ public class myUber {
 	public ArrayList<Driver> driverList ;
 	public ArrayList<Car> carList;
 
-	public myUber( int nbcustomers, int nbcars, int nbdrivers) {
+	public myUber( int nbcustomers, int nbdrivers) {
 		this.nbcustomers = nbcustomers;
-		this.nbcars = nbcars;
+		this.nbcars = nbdrivers;
 		this.nbdrivers = nbdrivers;
 		this.customerList = new ArrayList<Customer>();
 		this. driverList = new ArrayList<Driver>();
@@ -52,6 +52,13 @@ public class myUber {
 			 this.carList.add(car);
 		 }
 	}
+
+	@Override
+	public String toString() {
+		return "This myUber is composed of " + nbcustomers + " customers ," + nbcars + " cars and " + nbdrivers + " drivers.";
+	}
+	
+	
 }
 	
 	

@@ -36,13 +36,13 @@ public class Driver {
 		//drivers.add(this);
 		
 		// adds a random state for the driver
-		int r = (int) (Math.random()*3);
-		if (r == 0) {
+		int r = (int) (Math.random()*5);
+		if (r == 0 || r == 1) {
 			this.state = DriverState.OFFLINE;
-		}else if (r==1) {
-			this.state = DriverState.ONDUTY;
-		}else {
+		}else if ( r == 2) {
 			this.state = DriverState.OFFDUTY;
+		}else {
+			this.state = DriverState.ONDUTY;
 		}
 	}
 	
