@@ -33,6 +33,7 @@ class myUberTest {
 	final void testRequestRide() {
 		myUber univers = new myUber();
 		System.out.println(univers);
+		univers.initiation();
 		univers.requestRide();
 		System.out.println(univers.requestedRides);
 		

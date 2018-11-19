@@ -75,8 +75,11 @@ public class myUber {
 	    
 	    // then the system asks the client to select an end-point and a number of passengers
 	    
+	    PassengerNumber PN = new PassengerNumber();
+	    Integer nbPassenger = PN.passengerNumber;
 	    GPS end = new GPSRide();
-	    Integer nbPassenger = new PassengerNumber().passengerNumber;
+	    
+	    
 	    
 	    // it selects a (random) traffic status 
 	    
@@ -104,19 +107,16 @@ public class myUber {
 	    	
 	    RideFactory factory = new RideFactory();
 	    	
-	    	Scanner scan = new Scanner(System.in);
-			String input;
-			System.out.println("Please type the name of the ride you choose ");
-			while (true){
-			   if (scan.hasNext()){
-			             input = scan.toString();
-			             Ride ride = factory.createRide(input, customer.getGps(), end, nbPassenger);
-			             this.requestedRides.add(ride);
-			             break;
-			        }
-			
-			scan.close();
-			}
+	    Scanner scan = new Scanner(System.in);
+		String input;
+		System.out.println("Please type the name of the ride you choose ");
+		
+	    input = scan.next();
+		Ride ride = factory.createRide(input, customer.getGps(), end, nbPassenger);
+			  
+	    scan.close();
+		
+	    this.requestedRides.add(ride);
 	    	
 	    	
 	    }

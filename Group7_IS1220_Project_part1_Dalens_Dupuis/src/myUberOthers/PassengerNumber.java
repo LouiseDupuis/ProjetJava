@@ -10,7 +10,7 @@ public class PassengerNumber {
 
 	public PassengerNumber() {
 		Scanner scan = new Scanner(System.in);
-		Integer input;
+		int input;
 		System.out.println("How many passengers will board ? (1-6) ");
 		while (true){
 		   if (scan.hasNextInt()){
@@ -21,7 +21,7 @@ public class PassengerNumber {
 		            }
 		        }else{
 		              scan.next();
-		        }
+		        
 		        System.out.println("Please enter a valid number between 1 and 6");
 		    }
 		
@@ -31,4 +31,6 @@ public class PassengerNumber {
 	
 	
 
+}
+	
 }
