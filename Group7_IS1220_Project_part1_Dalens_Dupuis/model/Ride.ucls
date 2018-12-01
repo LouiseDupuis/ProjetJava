@@ -5,7 +5,7 @@
     project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/ConcreteRideCostVisitor.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="284" y="58"/>    
+    <position height="-1" width="-1" x="192" y="118"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -14,7 +14,7 @@
   </class>  
   <class id="2" language="java" name="myUberRide.Ride" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/Ride.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="564" y="308"/>    
+    <position height="-1" width="-1" x="854" y="304"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -25,117 +25,133 @@
     project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/RideCostVisitor.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="282" y="196"/>    
+    <position height="-1" width="-1" x="196" y="354"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="4" language="java" name="myUberRide.RideFactory" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
-    file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/RideFactory.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="784" y="52"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <enumeration id="5" language="java" name="myUberRide.RideStatus" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+  <enumeration id="4" language="java" name="myUberRide.RideStatus" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/RideStatus.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="155" y="389"/>    
+    <position height="-1" width="-1" x="533" y="315"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <enumeration id="6" language="java" name="myUberRide.RideType" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+  <enumeration id="5" language="java" name="myUberRide.RideType" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/RideType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="534" y="77"/>    
+    <position height="-1" width="-1" x="538" y="95"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="7" language="java" name="myUberRide.UberBlack" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+  <class id="6" language="java" name="myUberRide.UberBlack" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/UberBlack.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="783" y="622"/>    
+    <position height="-1" width="-1" x="1073" y="618"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="myUberRide.UberPool" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+  <class id="7" language="java" name="myUberRide.UberPool" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/UberPool.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="569" y="622"/>    
+    <position height="-1" width="-1" x="859" y="618"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="myUberRide.UberVan" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+  <class id="8" language="java" name="myUberRide.UberVan" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/UberVan.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="347" y="620"/>    
+    <position height="-1" width="-1" x="637" y="616"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="myUberRide.UberX" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+  <class id="9" language="java" name="myUberRide.UberX" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/UberX.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1003" y="609"/>    
+    <position height="-1" width="-1" x="1293" y="605"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="11" language="java" name="myUberRide.VisitableRide" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+  <interface id="10" language="java" name="myUberRide.VisitableRide" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
     file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/VisitableRide.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="579" y="864"/>    
+    <position height="-1" width="-1" x="910" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <generalization id="12">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <generalization id="13">    
+  <class id="11" language="java" name="myUberRide.RideFactory" project="Group7_IS1220_Project_Part1_Dalens_Dupuis" 
+    file="/Group7_IS1220_Project_Part1_Dalens_Dupuis/src/myUberRide/RideFactory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="866" y="70"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="12">    
     <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <realization id="14">    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="13">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
+  <generalization id="14">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
   <realization id="15">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="11"/>  
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="10"/>  
   </realization>  
   <association id="16">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="17" name="state"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
+      <attribute id="17" name="state">        
+        <position height="0" width="0" x="378" y="-74"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="0" width="0" x="378" y="-74"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="10"/>    
+  <realization id="19">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <generalization id="20">    
+  <generalization id="21">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <realization id="22">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <generalization id="23">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
