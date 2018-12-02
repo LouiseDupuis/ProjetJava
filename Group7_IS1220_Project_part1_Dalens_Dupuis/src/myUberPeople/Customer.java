@@ -1,9 +1,19 @@
 package myUberPeople;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
 
+import myUber.MyUber;
 import myUberOthers.GPS;
+import myUberOthers.GPSRide;
 import myUberOthers.Message;
+import myUberOthers.PassengerNumber;
+import myUberOthers.TrafficStatus;
+import myUberRide.ConcreteRideCostVisitor;
+import myUberRide.Ride;
+import myUberRide.RideFactory;
 
 public class Customer {
 
@@ -43,6 +53,58 @@ public class Customer {
 		     System.out.println("Please enter a valide CreditCard Number");   
 		    }	
 	}
+	
+	
+	// This methods allows a client to request a ride by entering a destination and a number of passengers
+	// it presents the list of offererd rides and their price (the traffic is selected randomly)
+	// the choice is made through the command line 
+	// The method returns the chosen ride 
+	
+    public void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
+	    
+	    
+	    
+	    // it selects a (random) traffic status 
+	    
+	    TrafficStatus traffic = TrafficStatus.MEDIUM;
+	    		
+	    int r = (int) (Math.random()*3);
+		if (r == 0 ) {
+			traffic = TrafficStatus.LOW;
+		}else if ( r == 1) {
+			traffic = TrafficStatus.MEDIUM;
+		}else {
+			traffic = TrafficStatus.HEAVY;
+		}
+	    
+	    // it shows to the client the prices of the different rides available
+	    
+	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
+	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
+	    	
+	    	
+	    System.out.println("This is the list of rides that we propose :");
+	    System.out.println(priceList);
+	    	
+	    // the client chooses his/her preferred option
+	    	
+	    RideFactory factory = new RideFactory();
+	    	
+	    Scanner scan = new Scanner(System.in);
+		String input;
+		System.out.println("Please type the name of the ride you choose ");
+		
+	    input = scan.next();
+		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
+			  
+	    scan.close();
+	    
+	    ride.customer = this;
+		
+	    myUber.requestedRides.add(ride) ; 
+	    	
+	    	
+	    }
 	
 	
 

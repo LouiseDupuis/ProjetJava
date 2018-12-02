@@ -3,6 +3,7 @@ package myUberPeople;
 import java.util.Scanner;
 
 import myUberCar.Car;
+import myUberRide.Ride;
 
 public class Driver {
 	/**
@@ -55,6 +56,11 @@ public class Driver {
 		scan.close();
 	}
 	
+	//this method allows the driver to choose whether to accept the ride or not
+	
+	public boolean decideRide(Ride ride) {
+		return true ; 
+	}
 
 	public String getName() {
 		return name;

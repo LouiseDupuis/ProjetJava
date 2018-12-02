@@ -4,11 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import myUber.MyUber;
+import myUberOthers.GPS;
+import myUberPeople.Customer;
+
 class CustomerTest {
 
+	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	final void testRequestRide() {
+		Customer customer = new Customer();
+		MyUber univers = new MyUber();
+		univers.initiation();
+		customer.requestRide(2,new GPS(), univers);
+		System.out.println(univers.requestedRides);
+		assertEquals(1, univers.requestedRides.size());
+		
 	}
 
 }
