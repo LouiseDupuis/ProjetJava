@@ -31,7 +31,39 @@ public class Ride extends Thread {
 	public void run(MyUber myUber) {
 		// My Uber classes the driver according to their locations and produces a list of the available drivers ordered by their location
 		
-		ArrayList<Driver> listeDriver = myUber.orderedDriverList();
+		ArrayList<Driver> listeDriver = myUber.orderedDriverList(start);
+		
+		Driver currentDriver; 
+		
+		while (!(this.state == RideStatus.CONFIRMED)) {
+		for (Driver driver: listeDriver) {
+			if ( driver.acceptRide(this)) {
+				this.state = RideStatus.CONFIRMED;
+				currentDriver = driver; 
+				// here the program should inform the customer that his ride has been confirmed
+				 break;
+			}
+			
+		}
+		// here the program should inform the customer that myUber is taking a little bit of time to find a driver
+		}
+		
+		// make the thread wait 30 seconds
+		// allow the customer to cancel the ride
+		
+		// the ride now starts
+		this.state = RideStatus.ONGOING;
+		   // the programm should send a message to the customer saying that the ride has started
+		
+		// make the thread wait 1 minute
+		
+		// the ride has ended
+		currentDriver.setGps(end);
+		customer.setGPS(end);
+		this.state = RideStatus.COMPLETED; 
+		myUber.bookOfRides.add(this);
+		
+		
 		
 		
 		
