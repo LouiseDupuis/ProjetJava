@@ -1,6 +1,6 @@
 package myUber.test;
 
-import myUberOthers.myUber;
+import myUber.myUber;
 
 public class MainTest {
 	

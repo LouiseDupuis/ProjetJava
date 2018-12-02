@@ -1,8 +1,12 @@
-package myUberOthers;
+package myUber;
 import java.util.*;
 
 import myUberCar.Car;
 import myUberCar.CarFactory;
+import myUberOthers.GPS;
+import myUberOthers.GPSRide;
+import myUberOthers.PassengerNumber;
+import myUberOthers.TrafficStatus;
 import myUberPeople.*;
 import myUberRide.ConcreteRideCostVisitor;
 import myUberRide.Ride;
