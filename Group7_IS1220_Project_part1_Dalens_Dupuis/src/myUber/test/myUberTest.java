@@ -4,13 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import myUber.myUber;
+import myUber.MyUber;
 
 class myUberTest {
 
 	@Test
 	final void testMyUberIntInt() {
-		myUber univers = new myUber(4,4);
+		MyUber univers = new MyUber(4,4);
 		assertTrue(univers.nbcars == univers.nbdrivers );
 		assertTrue(univers.nbcars == univers.nbcustomers );
 		assertTrue(univers.nbdrivers == 4 );
@@ -18,25 +18,17 @@ class myUberTest {
 
 	@Test
 	final void testMyUber() {
-		myUber univers = new myUber();
-		
+		MyUber univers = new MyUber();
+		System.out.println(univers);
 	}
 
 	@Test
 	final void testInitiation() {
-		myUber univers = new myUber();
+		MyUber univers = new MyUber();
 		
 		univers.initiation();
 	}
 	
-	@Test
-	final void testRequestRide() {
-		myUber univers = new myUber();
-		System.out.println(univers);
-		univers.initiation();
-		univers.requestRide();
-		System.out.println(univers.requestedRides);
-		
-	}
+	
 
 }

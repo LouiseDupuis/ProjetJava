@@ -1,6 +1,6 @@
 package myUber.test;
 
-import myUber.myUber;
+import myUber.MyUber;
 
 public class MainTest {
 	
@@ -8,7 +8,7 @@ public class MainTest {
 		
 		// creation of the myUber univers
 		
-		myUber univers = new myUber();
+		MyUber univers = new MyUber();
 		System.out.println(univers);
 		
 		univers.initiation();
