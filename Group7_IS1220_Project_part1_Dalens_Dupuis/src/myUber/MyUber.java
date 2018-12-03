@@ -81,9 +81,20 @@ public class MyUber {
 	
 	public synchronized ArrayList<Driver> orderedDriverList(GPS position){
 		ArrayList<Driver> orderedList = new ArrayList<Driver>();
-		
-		return this.driverList;
+		int n = orderedList.size();
+		for (int i=0;i<=n;i++) {
+			for (int j=1;j<=n-1;j++) {
+				Driver driver1 = orderedList.get(j);
+				Driver driver2 = orderedList.get(j+1);
+				if (driver1.getGps().length(position)<driver2.getGps().length(position)){
+					orderedList.remove(j);
+					orderedList.add(j+1, driver1);
+			}
+		}
 	}
+	return orderedList;
+}
+		
 	    
 
 
