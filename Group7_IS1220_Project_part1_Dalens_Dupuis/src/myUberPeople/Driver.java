@@ -2,9 +2,12 @@ package myUberPeople;
 
 import java.util.Scanner;
 
+import myUberCar.Berline;
 import myUberCar.Car;
 import myUberOthers.GPS;
 import myUberRide.Ride;
+import myUberRide.UberBlack;
+import myUberRide.UberVan;
 
 public class Driver {
 	/**
@@ -63,8 +66,24 @@ public class Driver {
 	}
 	
 	//this method allows the driver to choose whether to accept the ride or not
+	 
 	
 	public boolean acceptRide(Ride ride) {
+		
+		// First, it tests if the driver is able to accept the ride
+		
+		if (ride instanceof UberVan && this.car.getNbSeats() < 6){
+			return false;
+		}
+		
+		if (ride instanceof UberBlack && !(this.car instanceof Berline)){
+			return false;
+		}
+		
+		if (this.state == DriverState.OFFDUTY || this.state == DriverState.OFFDUTY) {
+			return false;
+		}
+		
 		return true ; 
 	}
 
