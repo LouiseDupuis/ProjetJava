@@ -45,7 +45,7 @@ public class Ride extends Thread {
 			if ( driver.acceptRide(this)) {
 				this.state = RideStatus.CONFIRMED;
 				driver.setState(DriverState.ONARIDE);
-				indice = listeDriver.indexOf(driver)
+				indice = listeDriver.indexOf(driver);
 				// here the program should inform the customer that his ride has been confirmed
 				System.out.println("Your ride is taken in charge by driver "+ driver);
 				System.out.println("Please wait while they make their way towards you. ");
