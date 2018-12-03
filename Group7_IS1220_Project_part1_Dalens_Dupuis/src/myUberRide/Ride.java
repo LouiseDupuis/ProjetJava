@@ -37,7 +37,7 @@ public class Ride extends Thread {
 		
 		ArrayList<Driver> listeDriver = myUber.orderedDriverList(start);
 		
-		int indice; 
+		int indice = 0; 
 		
 		
 		while (!(this.state == RideStatus.CONFIRMED)) {
