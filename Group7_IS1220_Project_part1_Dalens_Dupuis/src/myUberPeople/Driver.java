@@ -152,11 +152,17 @@ public class Driver {
 	public void setCar(Car car) {
 		this.car = car;
 	}
+	
 
 	@Override
 	public String toString() {
 		return "Driver [name=" + name + ", surname=" + surname + ", driverID=" + driverID + ", state=" + state
-				+ ", balance=" + balance + ", nbRide=" + nbRide + "]";
+				+ ", balance=" + balance + ", nbRide=" + nbRide + ", gps=" + gps + ", ]";
 	}
+
+	public String distancetoString(GPS position){
+		return "Driver [ID=" + driverID + "," + this.getGps().length(position)+ ", ]"; 
+	}
+
 
 }

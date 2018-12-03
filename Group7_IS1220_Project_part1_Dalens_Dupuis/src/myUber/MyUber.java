@@ -81,24 +81,30 @@ public class MyUber {
 		this.customerList.add(customer);
 	}
 	
+	//Method to order Drivers according to their proximity to position
 	public synchronized ArrayList<Driver> orderedDriverList(GPS position){
 		ArrayList<Driver> orderedList = new ArrayList<Driver>();
-		int n = orderedList.size();
-		for (int i=0;i<=n;i++) {
-			for (int j=1;j<=n-1;j++) {
-				Driver driver1 = orderedList.get(j);
-				Driver driver2 = orderedList.get(j+1);
-				if (driver1.getGps().length(position)<driver2.getGps().length(position)){
-					orderedList.remove(j);
-					orderedList.add(j+1, driver1);
+		int n = this.driverList.size();
+		orderedList.add(this.driverList.get(0));
+		for (int i=1;i<n;i++) {
+			Driver temp = this.driverList.get(i);
+			int j = 0;
+			double distance = temp.getGps().length(position);
+			while (j<orderedList.size() && distance>orderedList.get(j).getGps().length(position)) {
+				j++;
+				}
+			orderedList.add(j,temp);
 			}
+		//Verification 
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i=0;i<n;i++) {
+			list.add(orderedList.get(i).distancetoString(position));
 		}
-	}
+		//System.out.println(list);
 	return orderedList;
 }
+	
 		
-	    
-
 
 	@Override
 	public String toString() {
