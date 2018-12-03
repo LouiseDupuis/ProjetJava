@@ -34,6 +34,8 @@ public class MyUber {
 	
 	public ArrayList<Ride> requestedRides = new ArrayList<Ride>();
 	public ArrayList<Ride> bookOfRides = new ArrayList<Ride>();
+	
+	public ArrayList<Ride> waitingPoolRides = new ArrayList<Ride>();
 
 	public MyUber( int nbcustomers, int nbdrivers) {
 		this.nbcustomers = nbcustomers;

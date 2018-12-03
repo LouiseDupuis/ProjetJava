@@ -4,6 +4,7 @@ import myUber.MyUber;
 import myUberOthers.GPS;
 import myUberPeople.Customer;
 import myUberPeople.Driver;
+import myUberPeople.DriverState;
 
 import java.util.*;
 
@@ -14,9 +15,9 @@ public class Ride extends Thread {
 	protected GPS start ;
 	protected GPS end ;
 	
-	private Integer nbPassengers ; 
+	public Integer nbPassengers ; 
 	
-	private RideStatus state;
+	public RideStatus state;
 	
 	public Customer customer; 
 	public Driver currentDriver = null; 
@@ -36,17 +37,18 @@ public class Ride extends Thread {
 		
 		ArrayList<Driver> listeDriver = myUber.orderedDriverList(start);
 		
-		
+		int indice; 
 		
 		
 		while (!(this.state == RideStatus.CONFIRMED)) {
 		for (Driver driver: listeDriver) {
 			if ( driver.acceptRide(this)) {
 				this.state = RideStatus.CONFIRMED;
-				currentDriver = driver; 
+				driver.setState(DriverState.ONARIDE);
+				indice = listeDriver.indexOf(driver)
 				// here the program should inform the customer that his ride has been confirmed
-				System.out.println("Your ride is taken in charge by driver "+ currentDriver);
-				System.out.println("Please wait while he makes his way towards you. ");
+				System.out.println("Your ride is taken in charge by driver "+ driver);
+				System.out.println("Please wait while they make their way towards you. ");
 				 break;
 			}
 			
@@ -84,7 +86,8 @@ public class Ride extends Thread {
 				}
 		
 		// the ride has ended
-		currentDriver.setGps(end);
+		listeDriver.get(indice).setGps(end);
+		listeDriver.get(indice).state = DriverState.OFFDUTY ;
 		customer.setGPS(end);
 		this.state = RideStatus.COMPLETED; 
 		myUber.bookOfRides.add(this);
