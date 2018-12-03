@@ -19,6 +19,7 @@ public class Ride extends Thread {
 	private RideStatus state;
 	
 	public Customer customer; 
+	public Driver currentDriver = null; 
 
 	public Ride(GPS start, GPS end, Integer nbPassengers ) {
 		super();
@@ -36,7 +37,7 @@ public class Ride extends Thread {
 		ArrayList<Driver> listeDriver = myUber.orderedDriverList(start);
 		
 		
-		Driver currentDriver = null; 
+		
 		
 		while (!(this.state == RideStatus.CONFIRMED)) {
 		for (Driver driver: listeDriver) {
