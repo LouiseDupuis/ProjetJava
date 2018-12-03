@@ -60,7 +60,7 @@ public class Customer {
 	// the choice is made through the command line 
 	// The method returns the chosen ride 
 	
-    public void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
+    public synchronized void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
 	    
 	    
 	    

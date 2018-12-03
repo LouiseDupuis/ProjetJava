@@ -75,9 +75,14 @@ public class MyUber {
 		 }
 	}
 	
+	public void addCustomer (Customer customer) {
+		this.customerList.add(customer);
+	}
 	
-	public synchronized ArrayList<Driver> orderedList(GPS position){
-		return null; 
+	public synchronized ArrayList<Driver> orderedDriverList(GPS position){
+		ArrayList<Driver> orderedList = new ArrayList<Driver>();
+		
+		return this.driverList;
 	}
 	    
 
