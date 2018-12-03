@@ -70,7 +70,7 @@ public class Driver {
 	
 	public boolean acceptRide(Ride ride) {
 		
-		// First, it tests if the driver is able to accept the ride
+		//  it tests whether the driver is able to accept the ride
 		
 		if (ride instanceof UberVan && this.car.getNbSeats() < 6){
 			return false;
