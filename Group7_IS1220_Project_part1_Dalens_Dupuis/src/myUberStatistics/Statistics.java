@@ -1,9 +1,12 @@
 package myUberStatistics;
 
-public class Statistics {
+import myUber.MyUber;
 
-	public Statistics() {
-		// TODO Auto-generated constructor stub
+public class Statistics {
+	public MyUber myuber;
+	
+	public Statistics(MyUber myuber) {
+		
 	}
 
 }

@@ -19,7 +19,7 @@ import myUberRide.UberX;
    /**
     * 
     * 
-    * @author mon pc
+    * @author Louise Dupuis & Ariane Dalens
     *
     */
 
