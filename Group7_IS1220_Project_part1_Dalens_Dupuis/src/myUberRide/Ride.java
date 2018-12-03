@@ -9,6 +9,8 @@ import java.util.*;
 
 public class Ride extends Thread {
 	
+	public MyUber myUber;
+	
 	protected GPS start ;
 	protected GPS end ;
 	
@@ -28,10 +30,11 @@ public class Ride extends Thread {
 	
 	}
 	
-	public void run(MyUber myUber) {
+	public void run() {
 		// My Uber classes the driver according to their locations and produces a list of the available drivers ordered by their location
 		
 		ArrayList<Driver> listeDriver = myUber.orderedDriverList(start);
+		
 		
 		Driver currentDriver = null; 
 		

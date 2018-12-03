@@ -97,7 +97,7 @@ public class Customer {
 	    input = scan.next();
 		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
 			  
-	    scan.close();
+	   ride.myUber = myUber;
 	    
 	    ride.customer = this;
 		
