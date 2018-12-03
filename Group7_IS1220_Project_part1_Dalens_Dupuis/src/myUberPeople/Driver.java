@@ -3,6 +3,7 @@ package myUberPeople;
 import java.util.Scanner;
 
 import myUberCar.Car;
+import myUberOthers.GPS;
 import myUberRide.Ride;
 
 public class Driver {
@@ -23,6 +24,11 @@ public class Driver {
 	
 	public double balance;  // balance in the account
 	public int nbRide;    // number of rides done by the driver
+	
+	public GPS gps;     
+
+
+	public Car car; 
 	
 	
 	// Constructor
@@ -58,7 +64,7 @@ public class Driver {
 	
 	//this method allows the driver to choose whether to accept the ride or not
 	
-	public boolean decideRide(Ride ride) {
+	public boolean acceptRide(Ride ride) {
 		return true ; 
 	}
 
@@ -108,6 +114,22 @@ public class Driver {
 
 	public void setNbRide(int nbRide) {
 		this.nbRide = nbRide;
+	}
+	
+	public GPS getGps() {
+		return gps;
+	}
+
+	public void setGps(GPS gps) {
+		this.gps = gps;
+	}
+
+	public Car getCar() {
+		return car;
+	}
+
+	public void setCar(Car car) {
+		this.car = car;
 	}
 
 	@Override

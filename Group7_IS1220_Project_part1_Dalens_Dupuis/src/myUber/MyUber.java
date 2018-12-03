@@ -64,15 +64,26 @@ public class MyUber {
 			};
 		 for(int i = 1; i <= this.nbdrivers; i++) {
 			 Driver driver = new Driver();
-			 this.driverList.add(driver);
+			 
 			 CarFactory cf = new CarFactory();
 			 Car car = cf.createRandomCar();
 			 car.setDriver(driver);
+			 driver.setCar(car);
+			 driver.setGps(car.getGPS());
 			 this.carList.add(car);
+			 this.driverList.add(driver);
 		 }
 	}
 	
+	public void addCustomer (Customer customer) {
+		this.customerList.add(customer);
+	}
 	
+	public synchronized ArrayList<Driver> orderedDriverList(GPS position){
+		ArrayList<Driver> orderedList = new ArrayList<Driver>();
+		
+		return this.driverList;
+	}
 	    
 
 

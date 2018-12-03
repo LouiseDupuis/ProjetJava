@@ -60,7 +60,7 @@ public class Customer {
 	// the choice is made through the command line 
 	// The method returns the chosen ride 
 	
-    public void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
+    public synchronized void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
 	    
 	    
 	    
@@ -97,7 +97,7 @@ public class Customer {
 	    input = scan.next();
 		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
 			  
-	    scan.close();
+	   ride.myUber = myUber;
 	    
 	    ride.customer = this;
 		
