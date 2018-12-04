@@ -24,7 +24,7 @@ public class Customer {
 	private GPS gps;
 	private int NbRides=0;
 	private long CreditCard=1000000000;
-	private double balance= 0.0; 
+	private Double balance= 0.0; 
     ArrayList<Message> messageBox = new ArrayList<Message>();
 	
 	
@@ -97,8 +97,8 @@ public class Customer {
 	    input = scan.next();
 		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
 			  
-	   ride.myUber = myUber;
-	    
+		ride.myUber = myUber;
+		ride.price = priceList.get(input);
 	    ride.customer = this;
 		
 	    myUber.requestedRides.add(ride) ; 

@@ -16,7 +16,7 @@ public class MainTest {
 		
 		univers.initiation();
 		
-		// 
+		//ATTENTION SENSIBLE A LA CASSE
 		
 		Customer clientTest1 = new Customer();
 		univers.addCustomer(clientTest1);
@@ -27,17 +27,15 @@ public class MainTest {
 		clientTest2.requestRide(2, new GPS(), univers);
 		
 		System.out.println(univers.requestedRides.size());
-		System.out.println(univers.driverList.size());
+		System.out.println(univers.driverList);
 		
 		int counter = 1;
 		for (Ride ride: univers.requestedRides) {
 			ride.setRideID(counter);
 			ride.start();
 			counter++;
+			System.out.println(univers.driverList);
 		}
-		
-		
-		
 		
 		System.out.println(univers.bookOfRides);
 	}

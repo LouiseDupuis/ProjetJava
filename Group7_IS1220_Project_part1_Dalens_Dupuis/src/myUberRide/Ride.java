@@ -22,7 +22,8 @@ public class Ride extends Thread {
 	public RideStatus state;
 	
 	public Customer customer; 
-	public Driver currentDriver = null; 
+	//public Driver currentDriver = null; 
+	public Double price=0.0;
 
 	public Ride(GPS start, GPS end, Integer nbPassengers ) {
 		super();
@@ -30,8 +31,7 @@ public class Ride extends Thread {
 		this.end = end;
 		this.nbPassengers = nbPassengers;
 		this.state = RideStatus.UNCONFIRMED ;
-	
-	
+		this.price=0.0;
 	}
 	
 	public void run() {
@@ -89,11 +89,13 @@ public class Ride extends Thread {
 		
 		// the ride has ended
 		listeDriver.get(indice).setGps(end);
+		listeDriver.get(indice).balance += price;
 		listeDriver.get(indice).state = DriverState.OFFDUTY ;
 		customer.setGPS(end);
 		this.state = RideStatus.COMPLETED; 
 		myUber.bookOfRides.add(this);
 		System.out.println("The ride " + rideID + " is over, thank you for choosing myUber ! ");
+		System.out.println("Your driver's balance is now : "+ listeDriver.get(indice).balance +"€");
 		
 		
 		
@@ -165,13 +167,6 @@ public class Ride extends Thread {
 		this.customer = customer;
 	}
 
-	public Driver getCurrentDriver() {
-		return currentDriver;
-	}
-
-	public void setCurrentDriver(Driver currentDriver) {
-		this.currentDriver = currentDriver;
-	} 
 	
 	
 	
