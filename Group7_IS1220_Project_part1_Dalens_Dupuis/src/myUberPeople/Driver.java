@@ -27,7 +27,7 @@ public class Driver {
 	
 	public DriverState state; // State of the driver
 	
-	public double balance;  // balance in the account
+	public Double balance;  // balance in the account
 	public int nbRide;    // number of rides done by the driver
 	
 	public GPS gps;     
@@ -45,6 +45,7 @@ public class Driver {
 		this.surname="Doe";
 		this.balance=0.0;
 		this.nbRide=0;
+		this.balance=0.0;
 		//drivers.add(this);
 		
 		// adds a random state for the driver

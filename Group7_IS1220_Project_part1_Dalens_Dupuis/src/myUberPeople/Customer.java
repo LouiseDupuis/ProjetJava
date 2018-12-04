@@ -24,7 +24,7 @@ public class Customer {
 	private GPS gps;
 	private int NbRides=0;
 	private long CreditCard=1000000000;
-	private double balance= 0.0; 
+	private Double balance= 0.0; 
     ArrayList<Message> messageBox = new ArrayList<Message>();
 	
 	
@@ -97,14 +97,85 @@ public class Customer {
 	    input = scan.next();
 		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
 			  
-	   ride.myUber = myUber;
-	    
+		ride.myUber = myUber;
+		ride.price = priceList.get(input);
 	    ride.customer = this;
 		
 	    myUber.requestedRides.add(ride) ; 
 	    	
 	    	
 	    }
+    
+public synchronized void requestRandomRide(MyUber myUber ) {
+	    
+	    // definition of a random number of passengers (between 1 and 6)
+	    int nbPassenger = (int) (Math.random()*6) + 1;
+	    
+	    // random GPS destination
+	    
+	    GPS end = new GPS();
+
+	
+	
+	    
+	    // it selects a (random) traffic status 
+	    
+	    TrafficStatus traffic = TrafficStatus.MEDIUM;
+	    		
+	    int r = (int) (Math.random()*3);
+		if (r == 0 ) {
+			traffic = TrafficStatus.LOW;
+		}else if ( r == 1) {
+			traffic = TrafficStatus.MEDIUM;
+		}else {
+			traffic = TrafficStatus.HEAVY;
+		}
+	    
+	    // computing of the prices
+	    
+	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
+	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
+	    
+	    	
+	    // a type of ride is chosen
+	    
+	    String name = "";
+	    RideFactory factory = new RideFactory();
+	    
+	    if (nbPassenger <5) {
+	    int l = (int) (Math.random()*4);
+		if (l == 0 ) {
+			name = "UberX";
+		}else if ( l == 1) {
+			name = "UberVan";
+		}else if ( l == 2) {
+			name = "UberPool";
+		}else if ( l == 3) {
+			name = "UberBlack";
+		}
+	    }else {
+	    	name = "UberVan";
+	    }
+	
+	    
+		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
+		System.out.println(ride);
+			  
+		ride.myUber = myUber;
+		
+		try {
+		 ride.price = priceList.get(name);
+		} catch(NullPointerException e) {
+			System.out.println("Problème : le ride n'a pas de type");
+		}
+		
+	    ride.customer = this;
+		
+	    myUber.requestedRides.add(ride) ; 
+	    	
+	    	
+	    }
+	
 	
 	
 
