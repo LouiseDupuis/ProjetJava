@@ -29,8 +29,11 @@ public class MainTest {
 		System.out.println(univers.requestedRides.size());
 		System.out.println(univers.driverList.size());
 		
+		int counter = 1;
 		for (Ride ride: univers.requestedRides) {
+			ride.setRideID(counter);
 			ride.start();
+			counter++;
 		}
 		
 		

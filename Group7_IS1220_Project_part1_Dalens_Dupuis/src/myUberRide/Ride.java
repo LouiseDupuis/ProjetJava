@@ -10,6 +10,8 @@ import java.util.*;
 
 public class Ride extends Thread {
 	
+	public int rideID = 0; 
+	
 	public MyUber myUber;
 	
 	protected GPS start ;
@@ -47,7 +49,7 @@ public class Ride extends Thread {
 				driver.setState(DriverState.ONARIDE);
 				indice = listeDriver.indexOf(driver);
 				// here the program should inform the customer that his ride has been confirmed
-				System.out.println("Your ride is taken in charge by driver "+ driver);
+				System.out.println("Ride " + rideID + " is taken in charge by driver "+ driver);
 				System.out.println("Please wait while they make their way towards you. ");
 				 break;
 			}
@@ -71,7 +73,7 @@ public class Ride extends Thread {
 		// the ride now starts
 		this.state = RideStatus.ONGOING;
 		   // the programm should send a message to the customer saying that the ride has started
-		System.out.println("The ride has started " );
+		System.out.println("The ride " + rideID + " has started " );
 		
 		// make the thread wait 1 minute or the duration computed from the distance 
 		
@@ -91,7 +93,7 @@ public class Ride extends Thread {
 		customer.setGPS(end);
 		this.state = RideStatus.COMPLETED; 
 		myUber.bookOfRides.add(this);
-		System.out.println("The ride is over, thank you for choosing myUber ! ");
+		System.out.println("The ride " + rideID + " is over, thank you for choosing myUber ! ");
 		
 		
 		
@@ -105,7 +107,74 @@ public class Ride extends Thread {
 		
 	
 	
+	}
+
+	public int getRideID() {
+		return rideID;
+	}
+
+	public void setRideID(int rideID) {
+		this.rideID = rideID;
+	}
+
+	public MyUber getMyUber() {
+		return myUber;
+	}
+
+	public void setMyUber(MyUber myUber) {
+		this.myUber = myUber;
+	}
+
+	public GPS getStart() {
+		return start;
+	}
+
+	public void setStart(GPS start) {
+		this.start = start;
+	}
+
+	public GPS getEnd() {
+		return end;
+	}
+
+	public void setEnd(GPS end) {
+		this.end = end;
+	}
+
+	public Integer getNbPassengers() {
+		return nbPassengers;
+	}
+
+	public void setNbPassengers(Integer nbPassengers) {
+		this.nbPassengers = nbPassengers;
+	}
+
+	public RideStatus getStatus() {
+		return state;
+	}
+
+	public void setState(RideStatus state) {
+		this.state = state;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public Driver getCurrentDriver() {
+		return currentDriver;
+	}
+
+	public void setCurrentDriver(Driver currentDriver) {
+		this.currentDriver = currentDriver;
 	} 
+	
+	
+	
 	
 	
 	

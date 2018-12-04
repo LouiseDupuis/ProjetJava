@@ -23,30 +23,40 @@ public class UberPool extends Ride implements VisitableRide {
 		System.out.println("Nous recherchons un chauffeur pour vous !");
 		
          ArrayList<Driver> listeDriver = myUber.orderedDriverList(start);
-		
+         int indice = -1;
 		
 		
 		
 		while (!(this.state == RideStatus.CONFIRMED)) {
 		for (Driver driver: listeDriver) {
 			if ( driver.acceptRide(this)) {
+				
 				this.state = RideStatus.CONFIRMED;
+				indice = listeDriver.indexOf(driver);
+				
+				if (driver.getState() == DriverState.ONPOOL) {
+					System.out.println("You are joining a ride already shared by other passengers");
+				}else {
 				driver.setState(DriverState.ONPOOL);
+				}
+				
+				
 				driver.car.setFreeSeats( driver.car.getFreeSeats() - this.nbPassengers);
+				
 				// here the program should inform the customer that his ride has been confirmed
-				System.out.println("Your ride is taken in charge by driver "+ currentDriver);
+				System.out.println("Your ride is taken in charge by driver "+ driver);
 				System.out.println("Please wait while he makes his way towards you and looks for other passengers");
 				 break;
 			}
 			
 		}
-		// here the program should inform the customer that myUber is taking a little bit of time to find a driver
+		
 		}
 		
-		// make the thread wait 30 seconds
+		// make the thread wait 10 seconds
 		try
 		{
-		    Thread.sleep(30000);
+		    Thread.sleep(10000);
 		}
 		catch(InterruptedException ex)
 		{
@@ -55,11 +65,15 @@ public class UberPool extends Ride implements VisitableRide {
 		
 		// allow the customer to cancel the ride ?
 		
+		// verify if other passengers have joined the ride : 
+		
+		
+		
 		// the ride now starts
 		
 		this.state = RideStatus.ONGOING;
 		   // the program should send a message to the customer saying that the ride has started
-		System.out.println("The ride has started ");
+		System.out.println("The ride " + rideID + " has started ");
 		
 		// make the thread wait 1 minute or the duration computed from the distance 
 		
@@ -74,11 +88,16 @@ public class UberPool extends Ride implements VisitableRide {
 				}
 		
 		// the ride has ended
-		currentDriver.setGps(end);
-		customer.setGPS(end);
-		this.state = RideStatus.COMPLETED; 
-		myUber.bookOfRides.add(this);
-		System.out.println("The ride is over, thank you for choosing myUber ! ");
+				try {
+					listeDriver.get(indice).setGps(end);
+				    listeDriver.get(indice).state = DriverState.OFFDUTY ;
+				}catch(Exception e ) {
+					System.out.println(e.getMessage());
+				}
+				customer.setGPS(end);
+				this.state = RideStatus.COMPLETED; 
+				myUber.bookOfRides.add(this);
+				System.out.println("The ride " + rideID + " is over, thank you for choosing myUber ! ");
 		
 		
 		
