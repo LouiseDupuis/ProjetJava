@@ -34,6 +34,7 @@ public class Customer {
 		this.name= "John" ;
 		this.surname= "Doe";
 		this.gps= new GPS();
+		this.setBalance(0.0);
 	}
 	
 
@@ -44,6 +45,7 @@ public class Customer {
 		this.name = name;
 		this.surname = surname;
 		this.gps= new GPS();
+		this.setBalance(0.0);
 		if(creditCard >= 1000000000000000.0 && creditCard <= 9999999999999999.0)
 		    {
 		    	this.CreditCard= creditCard;
@@ -217,8 +219,13 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [customerID=" + customerID + ", name=" + name + ", surname=" + surname + ", gps=" + gps
-				+ ", NbRides=" + NbRides + ", CreditCard=" + CreditCard + ", balance=" + balance + ", messageBox="
+				+ ", NbRides=" + NbRides + ", CreditCard=" + CreditCard + ", balance=" + getBalance() + ", messageBox="
 				+ messageBox + "]";
+	}
+
+
+	public void setBalance(Double balance) {
+		this.balance = balance;
 	}
 
 }

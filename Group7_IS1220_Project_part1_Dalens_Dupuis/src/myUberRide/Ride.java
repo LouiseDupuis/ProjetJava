@@ -90,12 +90,17 @@ public class Ride extends Thread {
 		// the ride has ended
 		listeDriver.get(indice).setGps(end);
 		listeDriver.get(indice).balance += price;
+		this.customer.setBalance(this.customer.getBalance() + price);
+		this.customer.setNbRides(this.customer.getNbRides()+1);
+		listeDriver.get(indice).nbRide += 1;
 		listeDriver.get(indice).state = DriverState.OFFDUTY ;
 		customer.setGPS(end);
 		this.state = RideStatus.COMPLETED; 
 		myUber.bookOfRides.add(this);
-		System.out.println("The ride " + rideID + " is over, thank you for choosing myUber ! ");
+		System.out.println("The ride " + rideID + " is over, thank you for choosing myUber !");
 		System.out.println("Your driver's balance is now : "+ listeDriver.get(indice).balance +"€");
+		System.out.println(listeDriver.get(indice) + "" + this.customer); //Vérification de l'état du Driver après la ride
+		listeDriver.get(indice).rate();
 		
 		
 		

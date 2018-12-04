@@ -29,7 +29,7 @@ public class Driver {
 	
 	public Double balance;  // balance in the account
 	public int nbRide;    // number of rides done by the driver
-	
+	public double rating;
 	public GPS gps;     
 
 
@@ -46,6 +46,7 @@ public class Driver {
 		this.balance=0.0;
 		this.nbRide=0;
 		this.balance=0.0;
+		this.rating=5;
 		//drivers.add(this);
 		
 		// adds a random state for the driver
@@ -154,11 +155,19 @@ public class Driver {
 		this.car = car;
 	}
 	
+	public synchronized void rate() {
+		Scanner scan1 = new Scanner(System.in);
+		int input;
+		System.out.println("Please rate your driver");
+		input = scan1.nextInt();
+	    this.rating = (this.rating*this.nbRide+input)/(this.nbRide+1);
+		System.out.println(this);
+	}
 
 	@Override
 	public String toString() {
 		return "Driver [name=" + name + ", surname=" + surname + ", driverID=" + driverID + ", state=" + state
-				+ ", balance=" + balance + ", nbRide=" + nbRide + ", gps=" + gps + ", ]";
+				+ ", balance=" + balance + ", nbRide=" + nbRide +  ", rating=" + rating + ", gps=" + gps + ", ]";
 	}
 
 	public String distancetoString(GPS position){
