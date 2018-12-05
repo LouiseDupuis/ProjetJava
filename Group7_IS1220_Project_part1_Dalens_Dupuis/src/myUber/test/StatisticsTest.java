@@ -12,8 +12,8 @@ import myUberStatistics.Statistics;
 
 class StatisticsTest {
 
-	@Test
-	void test() {
+	
+	public static void main(String[] args) {
 		MyUber univers = new MyUber(10,10);
 		System.out.println(univers);
 		
@@ -32,10 +32,16 @@ class StatisticsTest {
 			System.out.println(univers.driverList);
 		}
 	
-		//univers.requestedRides.get(0).join(); 
-		//Statistics stat = new Statistics(univers); 
-		//System.out.println(stat.NbTotalRides());
-		//System.out.println(stat.TotalCashed());
+		try {
+			univers.requestedRides.get(0).join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		Statistics stat = new Statistics(univers); 
+		System.out.println(stat.NbTotalRides());
+		System.out.println(stat.TotalCashed());
+		System.out.println(stat.MostFrequentCustomer());
 		
 	}
 

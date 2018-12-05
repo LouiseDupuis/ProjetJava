@@ -22,7 +22,6 @@ public class Ride extends Thread {
 	public RideStatus state;
 	
 	public Customer customer; 
-	//public Driver currentDriver = null; 
 	public Double price=0.0;
 
 	public Ride(GPS start, GPS end, Integer nbPassengers ) {
