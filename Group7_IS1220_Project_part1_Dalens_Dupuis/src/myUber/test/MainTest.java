@@ -17,6 +17,7 @@ public class MainTest {
 		univers.initiation();
 		
 		//ATTENTION SENSIBLE A LA CASSE
+		//Attention note d'abord le dernier qui a fini sa course
 		
 		Customer clientTest1 = new Customer();
 		univers.addCustomer(clientTest1);

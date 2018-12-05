@@ -14,7 +14,7 @@ import myUberRide.UberVan;
 public class Driver {
 	/**
 	 * Driver class
-	 * @author Ariane Dalens
+	 * @author Ariane Dalens et Louise Dupuis
 	 * @version 0.2
 	 */
 	
@@ -70,6 +70,7 @@ public class Driver {
 	}
 	
 	//this method allows the driver to choose whether to accept the ride or not
+	//If he can he automatically accept the ride
 	
 	public boolean acceptRide(Ride ride) {
 		if(this.state == DriverState.ONDUTY || this.state==DriverState.OFFLINE || this.state == DriverState.ONARIDE) {
@@ -154,6 +155,11 @@ public class Driver {
 	public void setCar(Car car) {
 		this.car = car;
 	}
+	
+	/**
+	 * Permet avec un Scanner de noter un chauffeur
+	 * 
+	 */
 	
 	public synchronized void rate() {
 		Scanner scan1 = new Scanner(System.in);

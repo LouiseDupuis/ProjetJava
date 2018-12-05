@@ -3,6 +3,12 @@ package myUberCar;
 import myUberPeople.Driver;
 import myUberOthers.GPS;
 
+/**
+ * Classe abstraite de Voiture
+ * @author Ariane Dalens et Louise Dupuis
+ * @version 0.1
+ */
+
 public abstract class Car {
 	
 	protected String carID;

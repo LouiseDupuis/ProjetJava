@@ -15,7 +15,8 @@ public class ConcreteRideCostVisitor implements RideCostVisitor {
 	
 	public ConcreteRideCostVisitor(TrafficStatus trafficState) {
 		super();
-		this.trafficState = trafficState;
+		this.trafficState = trafficState.set();
+		System.out.println(this.trafficState);
 	}
 
 	// la methode visit retourne le prix du ride
