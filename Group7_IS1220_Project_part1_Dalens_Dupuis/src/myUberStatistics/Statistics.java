@@ -1,6 +1,11 @@
 package myUberStatistics;
 
+import java.util.ArrayList;
+
 import myUber.MyUber;
+import myUberOthers.GPS;
+import myUberPeople.Customer;
+import myUberPeople.Driver;
 
 /**
  * Classe de calculs de statistiques sur l'univers myUber
@@ -36,11 +41,29 @@ public class Statistics {
 		}
 		return k;
 		}
-	}
+	
 	
 /**
  * Méthode qui permet de classer les customers
  * 
  */
+
+public synchronized ArrayList<Customer> MostFrequentCustomer(){
+	ArrayList<Customer> orderedList = new ArrayList<Customer>();
+	int n = myuber.customerList.size();
+	orderedList.add(myuber.customerList.get(0));
+	for (int i=1;i<n;i++) {
+		Customer temp = myuber.customerList.get(i);
+		int j = 0;
+		double nbrides = temp.getNbRides();
+		while (j<orderedList.size() && nbrides<orderedList.get(j).getNbRides()) {
+			j++;
+			}
+		orderedList.add(j,temp);
+		}
+	//System.out.println(list);
+return orderedList;
+}
+}
 
 	
