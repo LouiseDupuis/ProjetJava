@@ -106,7 +106,54 @@ public class Customer {
 	    	
 	    }
 	
+public synchronized void requestRandomRide( ) {
+	    
+	    // random number of passenger
 	
+	    int nbPassenger = (int)Math.random()*6 + 1; 
+	    
+	    // 
+	    // it selects a (random) traffic status 
+	    
+	    TrafficStatus traffic = TrafficStatus.MEDIUM;
+	    		
+	    int r = (int) (Math.random()*3);
+		if (r == 0 ) {
+			traffic = TrafficStatus.LOW;
+		}else if ( r == 1) {
+			traffic = TrafficStatus.MEDIUM;
+		}else {
+			traffic = TrafficStatus.HEAVY;
+		}
+	    
+	    // it shows to the client the prices of the different rides available
+	    
+	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
+	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
+	    	
+	    	
+	    System.out.println("This is the list of rides that we propose :");
+	    System.out.println(priceList);
+	    	
+	    // the client chooses his/her preferred option
+	    	
+	    RideFactory factory = new RideFactory();
+	    	
+	    Scanner scan = new Scanner(System.in);
+		String input;
+		System.out.println("Please type the name of the ride you choose ");
+		
+	    input = scan.next();
+		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
+			  
+	   ride.myUber = myUber;
+	    
+	    ride.customer = this;
+		
+	    myUber.requestedRides.add(ride) ; 
+	    	
+	    	
+	    }
 
 
 
