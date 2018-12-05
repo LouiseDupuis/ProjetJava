@@ -15,7 +15,7 @@ class CustomerTest {
 	final void testRequestRide() {
 		Customer customer = new Customer();
 		MyUber univers = new MyUber();
-		univers.initiation();
+		univers.initiation(5,5,5);
 		customer.requestRide(2,new GPS(), univers);
 		System.out.println(univers.requestedRides);
 		assertEquals(1, univers.requestedRides.size());

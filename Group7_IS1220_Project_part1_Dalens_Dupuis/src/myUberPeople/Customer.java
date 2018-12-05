@@ -37,26 +37,21 @@ public class Customer {
 	}
 	
 
-	public Customer(String name, String surname, int creditCard) {
+	public Customer(String name, String surname
+) {
 		super();
 		counter++;
 		this.customerID=counter;
 		this.name = name;
 		this.surname = surname;
 		this.gps= new GPS();
-		if(creditCard >= 1000000000000000.0 && creditCard <= 9999999999999999.0)
-		    {
-		    	this.CreditCard= creditCard;
-		    }
-		    else
-		    {
-		     System.out.println("Please enter a valide CreditCard Number");   
-		    }	
+		
 	}
 	
 	
+	
 	// This methods allows a client to request a ride by entering a destination and a number of passengers
-	// it presents the list of offererd rides and their price (the traffic is selected randomly)
+	// it presents the list of offered rides and their price 
 
 	
     public synchronized Map<String,Double> requestRide(int nbPassenger, GPS end, MyUber myUber ) {
