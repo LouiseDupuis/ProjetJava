@@ -21,18 +21,33 @@ public class MainTest {
 		
 		Customer clientTest1 = new Customer();
 		univers.addCustomer(clientTest1);
-		clientTest1.requestRide(2, new GPS(), univers);
+		/*clientTest1.requestRide(2, new GPS(), univers);*/
 		
 		Customer clientTest2 = new Customer();
 		univers.addCustomer(clientTest2);
-		clientTest2.requestRide(2, new GPS(), univers);
+	//	clientTest2.requestRide(2, new GPS(), univers);
 		
+<<<<<<< HEAD
 		//System.out.println(univers.requestedRides.size());
 		System.out.println(univers.driverList);
 		
 		for (Ride ride: univers.requestedRides) {
 			ride.start();
 		}
+=======
+		
+		
+		
+		clientTest1.requestRandomRide(univers);
+		System.out.println(univers.requestedRides);
+		int counter = 1;
+		/*for (Ride ride: univers.requestedRides) {
+			ride.setRideID(counter);
+			ride.start();
+			counter++;
+			System.out.println(univers.driverList);
+		}*/
+>>>>>>> origin/louise10
 		
 		System.out.println(univers.bookOfRides);
 	}

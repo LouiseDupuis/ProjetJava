@@ -23,7 +23,7 @@ public class Customer {
 	private String surname;
 	private GPS gps;
 	private int NbRides=0;
-	private long CreditCard=1000000000;
+	private int CreditCard=1000000000;
 	private Double balance= 0.0; 
     private ArrayList<String> messageBox = new ArrayList<String>();
 	
@@ -39,7 +39,7 @@ public class Customer {
 	}
 	
 
-	public Customer(String name, String surname, long creditCard) {
+	public Customer(String name, String surname, int creditCard) {
 		super();
 		counter++;
 		this.customerID=counter;
@@ -61,10 +61,9 @@ public class Customer {
 	
 	// This methods allows a client to request a ride by entering a destination and a number of passengers
 	// it presents the list of offererd rides and their price (the traffic is selected randomly)
-	// the choice is made through the command line 
-	// The method returns the chosen ride 
+
 	
-    public synchronized void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
+    public synchronized Map<String,Double> requestRide(int nbPassenger, GPS end, MyUber myUber ) {
 	    
 	    // it selects a (random) traffic status 
 	    
@@ -83,16 +82,56 @@ public class Customer {
 	    
 	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
 	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
+	    return priceList; 	
 	    	
+	   
 	    	
+<<<<<<< HEAD
 	    System.out.println("This is the list of rides that we propose :");
 	    this.messageBox.add("This is the list of rides that we propose :");
 	    System.out.println(priceList);
 	    this.messageBox.add("price =" + priceList);
+=======
+>>>>>>> origin/louise10
 	    	
-	    // the client chooses his/her preferred option
+	    }
+    
+public synchronized void requestRandomRide(MyUber myUber ) {
+	    
+	    // definition of a random number of passengers (between 1 and 6)
+	    int nbPassenger = (int) (Math.random()*6) + 1;
+	    
+	    // random GPS destination
+	    
+	    GPS end = new GPS();
+
+	
+	
+	    
+	    // it selects a (random) traffic status 
+	    
+	    TrafficStatus traffic = TrafficStatus.MEDIUM;
+	    		
+	    int r = (int) (Math.random()*3);
+		if (r == 0 ) {
+			traffic = TrafficStatus.LOW;
+		}else if ( r == 1) {
+			traffic = TrafficStatus.MEDIUM;
+		}else {
+			traffic = TrafficStatus.HEAVY;
+		}
+	    
+	    // computing of the prices
+	    
+	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
+	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
+	    
 	    	
+	    // a type of ride is chosen
+	    
+	    String name = "";
 	    RideFactory factory = new RideFactory();
+<<<<<<< HEAD
 	    	
 	    Scanner scan = new Scanner(System.in);
 		String input;
@@ -101,15 +140,43 @@ public class Customer {
 		
 	    input = scan.next();
 		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
+=======
+	    
+	    if (nbPassenger <5) {
+	    int l = (int) (Math.random()*4);
+		if (l == 0 ) {
+			name = "UberX";
+		}else if ( l == 1) {
+			name = "UberVan";
+		}else if ( l == 2) {
+			name = "UberPool";
+		}else if ( l == 3) {
+			name = "UberBlack";
+		}
+	    }else {
+	    	name = "UberVan";
+	    }
+	
+	    
+		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
+		System.out.println(ride);
+>>>>>>> origin/louise10
 			  
 		ride.myUber = myUber;
-		ride.price = priceList.get(input);
+		
+		try {
+		 ride.price = priceList.get(name);
+		} catch(NullPointerException e) {
+			System.out.println("Problème : le ride n'a pas de type");
+		}
+		
 	    ride.customer = this;
 		
 	    myUber.requestedRides.add(ride) ; 
 	    	
 	    	
 	    }
+	
 	
 	
 
@@ -157,7 +224,7 @@ public class Customer {
 
 
 
-	public void setCreditCard(long creditCard) {
+	public void setCreditCard(int creditCard) {
 		if(creditCard >= 1000000000000000.0 && creditCard <= 9999999999999999.0)
 	    {
 	    	CreditCard= creditCard;
