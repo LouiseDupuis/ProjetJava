@@ -11,6 +11,7 @@ import java.util.*;
 public class Ride extends Thread {
 	
 	public int rideID = 0; 
+	public static int counter;
 	
 	public MyUber myUber;
 	
@@ -45,6 +46,7 @@ public class Ride extends Thread {
 		for (Driver driver: listeDriver) {
 			if ( driver.acceptRide(this)) {
 				this.state = RideStatus.CONFIRMED;
+				counter ++;
 				driver.setState(DriverState.ONARIDE);
 				indice = listeDriver.indexOf(driver);
 				// here the program should inform the customer that his ride has been confirmed
