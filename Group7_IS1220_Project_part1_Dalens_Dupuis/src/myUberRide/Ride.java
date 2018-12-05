@@ -8,6 +8,12 @@ import myUberPeople.DriverState;
 
 import java.util.*;
 
+/**
+ * Classe des drivers
+ * @author Ariane et Louise
+ * @version 1.3
+ */
+
 public class Ride extends Thread {
 	
 	public int rideID = 0; 
@@ -24,9 +30,11 @@ public class Ride extends Thread {
 	
 	public Customer customer; 
 	public Double price=0.0;
+	
 
 	public Ride(GPS start, GPS end, Integer nbPassengers ) {
 		super();
+		this.rideID = counter; 
 		this.start = start;
 		this.end = end;
 		this.nbPassengers = nbPassengers;
@@ -50,8 +58,10 @@ public class Ride extends Thread {
 				driver.setState(DriverState.ONARIDE);
 				indice = listeDriver.indexOf(driver);
 				// here the program should inform the customer that his ride has been confirmed
-				System.out.println("Ride " + rideID + " is taken in charge by driver "+ driver);
-				System.out.println("Please wait while they make their way towards you. ");
+				//System.out.println("Ride " + rideID + " is taken in charge by driver "+ driver.name);
+				this.customer.getMessageBox().add("Ride " + rideID + " is taken in charge by driver "+ driver.name);
+				//System.out.println("Please wait while they make their way towards you. ");
+				this.customer.getMessageBox().add("Please wait while they make their way towards you. ");
 				 break;
 			}
 			
@@ -74,7 +84,8 @@ public class Ride extends Thread {
 		// the ride now starts
 		this.state = RideStatus.ONGOING;
 		   // the programm should send a message to the customer saying that the ride has started
-		System.out.println("The ride " + rideID + " has started " );
+		//System.out.println("The ride " + rideID + " has started " );
+		this.customer.getMessageBox().add("Your ride " + rideID + " has started ");
 		
 		// make the thread wait 1 minute or the duration computed from the distance 
 		
@@ -99,12 +110,11 @@ public class Ride extends Thread {
 		this.state = RideStatus.COMPLETED; 
 		myUber.bookOfRides.add(this);
 		System.out.println("The ride " + rideID + " is over, thank you for choosing myUber !");
-		System.out.println("Your driver's balance is now : "+ listeDriver.get(indice).balance +"€");
+		this.customer.getMessageBox().add("The ride " + rideID + " is over, thank you for choosing myUber !");
+		//System.out.println("Your driver's balance is now : "+ listeDriver.get(indice).balance +"€");
+		listeDriver.get(indice).messageBox.add("Your balance is now : "+ listeDriver.get(indice).balance +"€");
 		System.out.println(listeDriver.get(indice) + "" + this.customer); //Vérification de l'état du Driver après la ride
-		listeDriver.get(indice).rate();
-		
-		
-		
+		listeDriver.get(indice).rate(this.customer);
 		
 		
 	}
@@ -113,7 +123,6 @@ public class Ride extends Thread {
 	public String toString() {
 		return "Ride [start=" + start + ", end=" + end + ", nbPassengers=" + nbPassengers + ", state=" + state + "]";
 		
-	
 	
 	}
 

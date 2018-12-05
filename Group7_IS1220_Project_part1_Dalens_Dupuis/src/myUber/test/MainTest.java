@@ -27,15 +27,11 @@ public class MainTest {
 		univers.addCustomer(clientTest2);
 		clientTest2.requestRide(2, new GPS(), univers);
 		
-		System.out.println(univers.requestedRides.size());
+		//System.out.println(univers.requestedRides.size());
 		System.out.println(univers.driverList);
 		
-		int counter = 1;
 		for (Ride ride: univers.requestedRides) {
-			ride.setRideID(counter);
 			ride.start();
-			counter++;
-			System.out.println(univers.driverList);
 		}
 		
 		System.out.println(univers.bookOfRides);

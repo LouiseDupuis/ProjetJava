@@ -25,7 +25,7 @@ public class Customer {
 	private int NbRides=0;
 	private long CreditCard=1000000000;
 	private Double balance= 0.0; 
-    ArrayList<Message> messageBox = new ArrayList<Message>();
+    private ArrayList<String> messageBox = new ArrayList<String>();
 	
 	
 	public Customer() {
@@ -35,6 +35,7 @@ public class Customer {
 		this.surname= "Doe";
 		this.gps= new GPS();
 		this.setBalance(0.0);
+		this.messageBox=new ArrayList<String>();
 	}
 	
 
@@ -46,6 +47,7 @@ public class Customer {
 		this.surname = surname;
 		this.gps= new GPS();
 		this.setBalance(0.0);
+		this.messageBox=new ArrayList<String>();
 		if(creditCard >= 1000000000000000.0 && creditCard <= 9999999999999999.0)
 		    {
 		    	this.CreditCard= creditCard;
@@ -63,8 +65,6 @@ public class Customer {
 	// The method returns the chosen ride 
 	
     public synchronized void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
-	    
-	    
 	    
 	    // it selects a (random) traffic status 
 	    
@@ -86,7 +86,9 @@ public class Customer {
 	    	
 	    	
 	    System.out.println("This is the list of rides that we propose :");
+	    this.messageBox.add("This is the list of rides that we propose :");
 	    System.out.println(priceList);
+	    this.messageBox.add("price =" + priceList);
 	    	
 	    // the client chooses his/her preferred option
 	    	
@@ -95,6 +97,7 @@ public class Customer {
 	    Scanner scan = new Scanner(System.in);
 		String input;
 		System.out.println("Please type the name of the ride you choose ");
+		this.messageBox.add("Please type the name of the ride you choose ");
 		
 	    input = scan.next();
 		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
@@ -179,13 +182,13 @@ public class Customer {
 
 
 
-	public ArrayList<Message> getMessageBox() {
+	public ArrayList<String> getMessageBox() {
 		return messageBox;
 	}
 
 
 
-	public void setMessageBox(ArrayList<Message> messageBox) {
+	public void setMessageBox(ArrayList<String> messageBox) {
 		this.messageBox = messageBox;
 	}
 

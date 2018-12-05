@@ -1,5 +1,6 @@
 package myUberPeople;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import myUberCar.Berline;
@@ -30,9 +31,8 @@ public class Driver {
 	public Double balance;  // balance in the account
 	public int nbRide;    // number of rides done by the driver
 	public double rating;
-	public GPS gps;     
-
-
+	public GPS gps; 
+	public ArrayList<String> messageBox = new ArrayList<String>();
 	public Car car; 
 	
 	
@@ -47,6 +47,7 @@ public class Driver {
 		this.nbRide=0;
 		this.balance=0.0;
 		this.rating=5;
+		this.messageBox = new ArrayList<String>();
 		//drivers.add(this);
 		
 		// adds a random state for the driver
@@ -161,13 +162,19 @@ public class Driver {
 	 * 
 	 */
 	
-	public synchronized void rate() {
+	public synchronized void rate(Customer cust) {
 		Scanner scan1 = new Scanner(System.in);
 		int input;
 		System.out.println("Please rate your driver");
+		cust.getMessageBox().add("Please rate your driver");
 		input = scan1.nextInt();
-	    this.rating = (this.rating*this.nbRide+input)/(this.nbRide+1);
-		System.out.println(this);
+		while (!(input>0 && input<=5)){
+		System.out.println("Rate beetween 1 & 5");
+		cust.getMessageBox().add("Rate beetween 1 & 5");
+		input = scan1.nextInt();
+	    }
+		this.rating = (this.rating*this.nbRide+input)/(this.nbRide+1);
+		//System.out.println(this);
 	}
 
 	@Override

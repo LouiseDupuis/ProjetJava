@@ -10,6 +10,7 @@ import myUberOthers.GPS;
 public class RideFactory {
 	
 	public Ride createRide( String typeOfRide, GPS start, GPS end, Integer nbPassagers ) {
+		Ride.counter++;
 		if ( typeOfRide.equalsIgnoreCase("UBERX") && nbPassagers <= 4) {
 			return new UberX( start, end, nbPassagers);
 			

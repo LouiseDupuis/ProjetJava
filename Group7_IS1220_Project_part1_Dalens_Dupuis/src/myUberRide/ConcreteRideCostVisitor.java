@@ -15,7 +15,7 @@ public class ConcreteRideCostVisitor implements RideCostVisitor {
 	
 	public ConcreteRideCostVisitor(TrafficStatus trafficState) {
 		super();
-		this.trafficState = trafficState.set();
+		this.trafficState = trafficState.set(10,10);
 		System.out.println(this.trafficState);
 	}
 
