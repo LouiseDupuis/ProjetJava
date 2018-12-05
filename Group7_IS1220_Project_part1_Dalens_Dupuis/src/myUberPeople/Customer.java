@@ -23,7 +23,7 @@ public class Customer {
 	private String surname;
 	private GPS gps;
 	private int NbRides=0;
-	private long CreditCard=1000000000;
+	private int CreditCard=1000000000;
 	private Double balance= 0.0; 
     ArrayList<Message> messageBox = new ArrayList<Message>();
 	
@@ -37,7 +37,7 @@ public class Customer {
 	}
 	
 
-	public Customer(String name, String surname, long creditCard) {
+	public Customer(String name, String surname, int creditCard) {
 		super();
 		counter++;
 		this.customerID=counter;
@@ -57,10 +57,9 @@ public class Customer {
 	
 	// This methods allows a client to request a ride by entering a destination and a number of passengers
 	// it presents the list of offererd rides and their price (the traffic is selected randomly)
-	// the choice is made through the command line 
-	// The method returns the chosen ride 
+
 	
-    public synchronized void requestRide(int nbPassenger, GPS end, MyUber myUber ) {
+    public synchronized Map<String,Double> requestRide(int nbPassenger, GPS end, MyUber myUber ) {
 	    
 	    
 	    
@@ -81,27 +80,9 @@ public class Customer {
 	    
 	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
 	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
+	    return priceList; 	
 	    	
-	    	
-	    System.out.println("This is the list of rides that we propose :");
-	    System.out.println(priceList);
-	    	
-	    // the client chooses his/her preferred option
-	    	
-	    RideFactory factory = new RideFactory();
-	    	
-	    Scanner scan = new Scanner(System.in);
-		String input;
-		System.out.println("Please type the name of the ride you choose ");
-		
-	    input = scan.next();
-		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
-			  
-		ride.myUber = myUber;
-		ride.price = priceList.get(input);
-	    ride.customer = this;
-		
-	    myUber.requestedRides.add(ride) ; 
+	   
 	    	
 	    	
 	    }
@@ -223,7 +204,7 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 
 
 
-	public void setCreditCard(long creditCard) {
+	public void setCreditCard(int creditCard) {
 		if(creditCard >= 1000000000000000.0 && creditCard <= 9999999999999999.0)
 	    {
 	    	CreditCard= creditCard;
