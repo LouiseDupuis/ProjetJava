@@ -44,7 +44,7 @@ public class Statistics {
 	
 	
 /**
- * Méthode qui permet de classer les customers
+ * Méthode qui permet de classer les customers selon le plus grand nombre de ride effectué
  * 
  */
 
@@ -57,6 +57,49 @@ public synchronized ArrayList<Customer> MostFrequentCustomer(){
 		int j = 0;
 		double nbrides = temp.getNbRides();
 		while (j<orderedList.size() && nbrides<orderedList.get(j).getNbRides()) {
+			j++;
+			}
+		orderedList.add(j,temp);
+		}
+	//System.out.println(list);
+return orderedList;
+}
+
+/**
+ * Méthode qui permet de classer les customers selon les leur balance 
+ * 
+ */
+
+public synchronized ArrayList<Customer> MostChargedCustomer(){
+	ArrayList<Customer> orderedList = new ArrayList<Customer>();
+	int n = myuber.customerList.size();
+	orderedList.add(myuber.customerList.get(0));
+	for (int i=1;i<n;i++) {
+		Customer temp = myuber.customerList.get(i);
+		int j = 0;
+		double balance = temp.getBalance();
+		while (j<orderedList.size() && balance<orderedList.get(j).getBalance()) {
+			j++;
+			}
+		orderedList.add(j,temp);
+		}
+	//System.out.println(list);
+return orderedList;
+}
+
+/**
+ * Méthode qui permet de classer les driver selon leur appréciation 
+ * 
+ */
+public synchronized ArrayList<Driver> MostAppreciatedDriver(){
+	ArrayList<Driver> orderedList = new ArrayList<Driver>();
+	int n = myuber.driverList.size();
+	orderedList.add(myuber.driverList.get(0));
+	for (int i=1;i<n;i++) {
+		Driver temp = myuber.driverList.get(i);
+		int j = 0;
+		double rating = temp.rating;
+		while (j<orderedList.size() && rating<orderedList.get(j).rating) {
 			j++;
 			}
 		orderedList.add(j,temp);
