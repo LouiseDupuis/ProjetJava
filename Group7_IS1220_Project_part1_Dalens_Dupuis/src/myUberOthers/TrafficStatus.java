@@ -26,7 +26,7 @@ public TrafficStatus set() {
 		int heure = calendar.get(java.util.Calendar.HOUR_OF_DAY);
 		double a=Math.random();
 		System.out.println(heure + a);
-		if ((heure<7)&(heure>=22)) {
+		if ((heure<7)||(heure>=22)) {
 			if (a<0.95) {return TrafficStatus.LOW;}
 			if ((a>=0.95)&(a<0.99)) {return TrafficStatus.MEDIUM;}
 			if (a>0.99) {return TrafficStatus.HEAVY;}
@@ -65,7 +65,7 @@ public TrafficStatus set(int hour,int min) {
 	int heure = calendar.get(java.util.Calendar.HOUR_OF_DAY);
 	double a=Math.random();
 	System.out.println(heure + a);
-	if ((heure<7)&(heure>=22)) {
+	if ((heure<7)||(heure>=22)) {
 		if (a<0.95) {return TrafficStatus.LOW;}
 		if ((a>=0.95)&(a<0.99)) {return TrafficStatus.MEDIUM;}
 		if (a>0.99) {return TrafficStatus.HEAVY;}
