@@ -25,7 +25,7 @@ public class Customer {
 	private int NbRides=0;
 	private int CreditCard=1000000000;
 	private Double balance= 0.0; 
-    private ArrayList<String> messageBox = new ArrayList<String>();
+    ArrayList<Message> messageBox = new ArrayList<Message>();
 	
 	
 	public Customer() {
@@ -34,49 +34,38 @@ public class Customer {
 		this.name= "John" ;
 		this.surname= "Doe";
 		this.gps= new GPS();
-		this.setBalance(0.0);
-		this.messageBox=new ArrayList<String>();
 	}
 	
 
-	public Customer(String name, String surname, int creditCard) {
+	public Customer(String name, String surname
+) {
 		super();
 		counter++;
 		this.customerID=counter;
 		this.name = name;
 		this.surname = surname;
 		this.gps= new GPS();
-		this.setBalance(0.0);
-		this.messageBox=new ArrayList<String>();
-		if(creditCard >= 1000000000000000.0 && creditCard <= 9999999999999999.0)
-		    {
-		    	this.CreditCard= creditCard;
-		    }
-		    else
-		    {
-		     System.out.println("Please enter a valide CreditCard Number");   
-		    }	
+		
 	}
 	
 	
+	
 	// This methods allows a client to request a ride by entering a destination and a number of passengers
-	// it presents the list of offererd rides and their price (the traffic is selected randomly)
+	// it presents the list of offered rides and their price 
 
 	
-    public synchronized Map<String,Double> requestRide(int nbPassenger, GPS end, MyUber myUber ) {
+    public synchronized Map<String,Double> requestRide(int nbPassenger, GPS end, MyUber myUber, int time ) {
+	    
+	    
 	    
 	    // it selects a (random) traffic status 
 	    
-	    TrafficStatus traffic = TrafficStatus.MEDIUM;
-	    		
-	    int r = (int) (Math.random()*3);
-		if (r == 0 ) {
-			traffic = TrafficStatus.LOW;
-		}else if ( r == 1) {
-			traffic = TrafficStatus.MEDIUM;
-		}else {
-			traffic = TrafficStatus.HEAVY;
-		}
+    	TrafficStatus traffic = TrafficStatus.set();
+ 	   if (time >= 0) {
+       	 traffic = TrafficStatus.set(time, 0);
+       	 
+        };
+        System.out.println(traffic);
 	    
 	    // it shows to the client the prices of the different rides available
 	    
@@ -86,11 +75,10 @@ public class Customer {
 	    	
 	   
 	    	
-
 	    	
 	    }
     
-public synchronized void requestRandomRide(MyUber myUber ) {
+public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 	    // definition of a random number of passengers (between 1 and 6)
 	    int nbPassenger = (int) (Math.random()*6) + 1;
@@ -104,16 +92,11 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 	    // it selects a (random) traffic status 
 	    
-	    TrafficStatus traffic = TrafficStatus.MEDIUM;
-	    		
-	    int r = (int) (Math.random()*3);
-		if (r == 0 ) {
-			traffic = TrafficStatus.LOW;
-		}else if ( r == 1) {
-			traffic = TrafficStatus.MEDIUM;
-		}else {
-			traffic = TrafficStatus.HEAVY;
-		}
+	   TrafficStatus traffic = TrafficStatus.set();
+	   if (time >= 0) {
+      	 traffic = TrafficStatus.set(time, 0);
+      	 
+       };
 	    
 	    // computing of the prices
 	    
@@ -125,7 +108,6 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 	    String name = "";
 	    RideFactory factory = new RideFactory();
-
 	    
 	    if (nbPassenger <5) {
 	    int l = (int) (Math.random()*4);
@@ -145,7 +127,6 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
 		System.out.println(ride);
-
 			  
 		ride.myUber = myUber;
 		
@@ -234,13 +215,13 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 
 
 
-	public ArrayList<String> getMessageBox() {
+	public ArrayList<Message> getMessageBox() {
 		return messageBox;
 	}
 
 
 
-	public void setMessageBox(ArrayList<String> messageBox) {
+	public void setMessageBox(ArrayList<Message> messageBox) {
 		this.messageBox = messageBox;
 	}
 
@@ -273,10 +254,15 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 
 	@Override
 	public String toString() {
-		return "Customer [customerID=" + customerID + ", name=" + name + ", surname=" + surname + ", gps=" + gps
-				+ ", NbRides=" + NbRides + ", CreditCard=" + CreditCard + ", balance=" + getBalance() + ", messageBox="
-				+ messageBox + "]";
+		return "Customer [ name=" + name + ", surname=" + surname + 
+				"]";
 	}
+	
+	public String toStringWithPosition() {
+		return "Customer [ name=" + name + ", surname=" + surname + ", gps=" + gps +
+				"]";
+	}
+
 
 
 	public void setBalance(Double balance) {

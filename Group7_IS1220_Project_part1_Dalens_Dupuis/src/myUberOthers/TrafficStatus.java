@@ -21,7 +21,7 @@ public enum TrafficStatus{
 	 */
 	
 	
-public TrafficStatus set() {
+public static TrafficStatus set() {
 		java.util.GregorianCalendar calendar = new GregorianCalendar();
 		int heure = calendar.get(java.util.Calendar.HOUR_OF_DAY);
 		double a=Math.random();
@@ -59,7 +59,7 @@ public TrafficStatus set() {
  */
 
 
-public TrafficStatus set(int hour,int min) {
+public static TrafficStatus set(int hour,int min) {
 	java.util.GregorianCalendar calendar = new GregorianCalendar();
 	calendar.set(java.util.Calendar.YEAR, java.util.Calendar.MONTH, java.util.Calendar.DATE, hour, min); ;
 	int heure = calendar.get(java.util.Calendar.HOUR_OF_DAY);
