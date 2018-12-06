@@ -59,16 +59,42 @@ public class MyUber {
 		this.carList = new ArrayList<Car>();
 	}
 	
-	public void initiation() {
+	public void initiation(int nbStandard, int nbBerline, int nbVan) {
 		 for(int i = 1; i <= this.nbcustomers; i++)
 		{
 			  this.customerList.add(new Customer());
 			};
-		 for(int i = 1; i <= this.nbdrivers; i++) {
+			
+			
+		 for(int i = 1; i <= nbStandard; i++) {
 			 Driver driver = new Driver();
 			 
 			 CarFactory cf = new CarFactory();
-			 Car car = cf.createRandomCar();
+			 Car car = cf.createCar("Standard");
+			 car.setDriver(driver);
+			 driver.setCar(car);
+			 driver.setGps(car.getGPS());
+			 this.carList.add(car);
+			 this.driverList.add(driver);
+		 }
+		 
+		 for(int i = 1; i <= nbBerline; i++) {
+			 Driver driver = new Driver();
+			 
+			 CarFactory cf = new CarFactory();
+			 Car car = cf.createCar("Berline");
+			 car.setDriver(driver);
+			 driver.setCar(car);
+			 driver.setGps(car.getGPS());
+			 this.carList.add(car);
+			 this.driverList.add(driver);
+		 }
+		 
+		 for(int i = 1; i <= nbVan; i++) {
+			 Driver driver = new Driver();
+			 
+			 CarFactory cf = new CarFactory();
+			 Car car = cf.createCar("Van");
 			 car.setDriver(driver);
 			 driver.setCar(car);
 			 driver.setGps(car.getGPS());
@@ -76,6 +102,32 @@ public class MyUber {
 			 this.driverList.add(driver);
 		 }
 	}
+	
+	public Customer findCustomerByID(int id) {
+		for (Customer customer: this.customerList) {
+			if( customer.getCustomerID() == id) {
+				return customer;
+			}
+		}return null;
+	}
+	
+	public Car findCarByID(String id) {
+		for (Car car: this.carList) {
+			if( car.getCarID() == id) {
+				return car;
+			}
+		}return null;
+	}
+
+	
+	public Driver findDriverByName(String name, String surname) {
+		for (Driver driver: this.driverList) {
+			if(driver.name == name && driver.surname ==surname){
+				
+				return driver;
+			}
+		} return null;
+	} 
 	
 	public void addCustomer (Customer customer) {
 		this.customerList.add(customer);
