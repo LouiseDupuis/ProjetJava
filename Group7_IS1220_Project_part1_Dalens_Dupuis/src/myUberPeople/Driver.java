@@ -180,13 +180,10 @@ public class Driver {
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
-		return "Driver [name=" + name + ", surname=" + surname + ", driverID=" + driverID + ", state=" + state
-				+ ", balance=" + balance + ", nbRide=" + nbRide +  ", rating=" + rating + ", gps=" + gps + ", ]";
-=======
+
 		return "Driver [name=" + name + ", surname=" + surname + ", state=" + state +
 				"]";
->>>>>>> origin/louise10
+
 	}
 
 	public String distancetoString(GPS position){

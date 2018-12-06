@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import myUber.MyUber;
 import myUberOthers.GPS;
-import myUberOthers.GPSRide;
 import myUberOthers.Message;
 import myUberOthers.PassengerNumber;
 import myUberOthers.TrafficStatus;
@@ -25,7 +24,7 @@ public class Customer {
 	private int NbRides=0;
 	private int CreditCard=1000000000;
 	private Double balance= 0.0; 
-    ArrayList<Message> messageBox = new ArrayList<Message>();
+    ArrayList<String> messageBox = new ArrayList<String>();
 	
 	
 	public Customer() {
@@ -71,21 +70,15 @@ public class Customer {
 	    
 	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
 	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
-	    return priceList; 	
+	    return priceList; }
 	    	
-	   
-	    	
-<<<<<<< HEAD
-	    	
-=======
 
 	   // System.out.println("This is the list of rides that we propose :");
 	   // this.messageBox.add("This is the list of rides that we propose :");
 	   // System.out.println(priceList);
 	    // this.messageBox.add("price =" + priceList);
 
->>>>>>> Ariane12
-	    }
+
     
 public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
@@ -117,19 +110,7 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 	    String name = "";
 	    RideFactory factory = new RideFactory();
-<<<<<<< HEAD
-=======
 
-	    	
-//	    Scanner scan = new Scanner(System.in);
-//		String input;
-//		System.out.println("Please type the name of the ride you choose ");
-//		this.messageBox.add("Please type the name of the ride you choose ");
-		
-//	    input = scan.next();
-//		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
-
->>>>>>> Ariane12
 	    
 	    if (nbPassenger <5) {
 	    int l = (int) (Math.random()*4);
@@ -149,10 +130,7 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
 		System.out.println(ride);
-<<<<<<< HEAD
-=======
 
->>>>>>> Ariane12
 			  
 		ride.myUber = myUber;
 		
@@ -241,13 +219,13 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 
 
 
-	public ArrayList<Message> getMessageBox() {
+	public ArrayList<String> getMessageBox() {
 		return messageBox;
 	}
 
 
 
-	public void setMessageBox(ArrayList<Message> messageBox) {
+	public void setMessageBox(ArrayList<String> messageBox) {
 		this.messageBox = messageBox;
 	}
 
@@ -287,15 +265,13 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	public String toStringWithPosition() {
 		return "Customer [ name=" + name + ", surname=" + surname + ", gps=" + gps +
 				"]";
-<<<<<<< HEAD
 	}
 
 
 
 	public void setBalance(Double balance) {
 		this.balance = balance;
-=======
->>>>>>> origin/louise10
+
 	}
 
 }

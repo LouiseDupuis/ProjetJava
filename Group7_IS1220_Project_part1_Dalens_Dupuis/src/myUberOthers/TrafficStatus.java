@@ -16,11 +16,7 @@ public enum TrafficStatus{
 	HEAVY;
 	
 	/**
-<<<<<<< HEAD
-	 * MÃ©thode qui permet de donner le bon traffic  
-=======
-	 * Méthode qui permet de donner le bon traffic en fonction de l'heure qu'il est 
->>>>>>> origin/louise10
+	 * Mï¿½thode qui permet de donner le bon traffic en fonction de l'heure qu'il est 
 	 * @return le trafficstatus qui correspond
 	 */
 	
@@ -30,11 +26,9 @@ public static TrafficStatus set() {
 		int heure = calendar.get(java.util.Calendar.HOUR_OF_DAY);
 		double a=Math.random();
 		System.out.println(heure + a);
-<<<<<<< HEAD
-		if ((heure<7)||(heure>=22)) {
-=======
+
 		if ((heure<7) || (heure>=22)) {
->>>>>>> origin/louise10
+
 			if (a<0.95) {return TrafficStatus.LOW;}
 			if ((a>=0.95)&(a<0.99)) {return TrafficStatus.MEDIUM;}
 			if (a>0.99) {return TrafficStatus.HEAVY;}
@@ -62,11 +56,9 @@ public static TrafficStatus set() {
 	}
    
 /**
-<<<<<<< HEAD
- * MÃ©thode qui permet de donner le bon traffic  
-=======
- * Méthode qui permet de donner le bon traffic  
->>>>>>> origin/louise10
+
+ * Mï¿½thode qui permet de donner le bon traffic  
+
  * @return le trafficstatus qui correspond
  */
 
@@ -77,11 +69,9 @@ public static TrafficStatus set(int hour,int min) {
 	int heure = calendar.get(java.util.Calendar.HOUR_OF_DAY);
 	double a=Math.random();
 	System.out.println(heure + a);
-<<<<<<< HEAD
-	if ((heure<7)||(heure>=22)) {
-=======
+
 	if ((heure<7) || (heure>=22)) {
->>>>>>> origin/louise10
+
 		if (a<0.95) {return TrafficStatus.LOW;}
 		if ((a>=0.95)&(a<0.99)) {return TrafficStatus.MEDIUM;}
 		if (a>0.99) {return TrafficStatus.HEAVY;}
