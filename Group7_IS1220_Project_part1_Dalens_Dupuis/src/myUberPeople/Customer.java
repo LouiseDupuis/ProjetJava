@@ -263,9 +263,13 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 
 	@Override
 	public String toString() {
-		return "Customer [customerID=" + customerID + ", name=" + name + ", surname=" + surname + ", gps=" + gps
-				+ ", NbRides=" + NbRides + ", CreditCard=" + CreditCard + ", balance=" + balance + ", messageBox="
-				+ messageBox + "]";
+		return "Customer [ name=" + name + ", surname=" + surname + 
+				"]";
+	}
+	
+	public String toStringWithPosition() {
+		return "Customer [ name=" + name + ", surname=" + surname + ", gps=" + gps +
+				"]";
 	}
 
 }

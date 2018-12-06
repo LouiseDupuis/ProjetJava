@@ -111,6 +111,15 @@ public class MyUber {
 		}return null;
 	}
 	
+	public Car findCarByID(String id) {
+		for (Car car: this.carList) {
+			if( car.getCarID() == id) {
+				return car;
+			}
+		}return null;
+	}
+
+	
 	public Driver findDriverByName(String name, String surname) {
 		for (Driver driver: this.driverList) {
 			if(driver.name == name && driver.surname ==surname){

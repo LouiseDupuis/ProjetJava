@@ -225,6 +225,7 @@ public class Main{
                               fenetre.setVisible(true);
                                                            
                }
+
           
                
                public void newcommandline() {
@@ -268,17 +269,17 @@ public class Main{
                                                                Customer customer = new Customer(name,surname);
                                                                this.myUber.addCustomer(customer);
                                                                textdown.setText("Customer "+ customer.getName() + " " + customer.getSurname()+ " has succesfully been added. Id = " + customer.getCustomerID()
-                                                               +"\n " + myUber.customerList);
+                                                               +"\n " + myUber.customerList.toString());
                                                                
                                                                
                                                                
                                                 }
-                                            }
+                                            } 
                                                 
                                                 
                                                 else if (commandsplitted[0].equals("addCarDriver")) {
                                                     if (commandsplitted.length != 4) {
-                                                                   textdown.setText("The addDriver method requires 3 arguments: the name of the driver (String) , the surname of the driver (String) and the type of his car (String)");
+                                                                   textdown.setText("The addCarDriver method requires 3 arguments: the name of the driver (String) , the surname of the driver (String) and the type of his car (String)");
                                                     }else {
                                                                    String name= commandsplitted[1];
                                                                    String surname= commandsplitted[2];
@@ -293,13 +294,116 @@ public class Main{
                                                                    myUber.carList.add(car);
                                                                    myUber.nbdrivers++;
                                                                    myUber.nbcars++;
-                                                                   textdown.setText(myUber.driverList + "\n" + myUber.carList);
+                                                                   textdown.setText(myUber.driverList.toString() + "\n" + myUber.carList.toString());
                                                                    
                                                                    
                                                                    
                                                     }
+                                                }
+                                                    
+                                                    else if (commandsplitted[0].equals("addDriver")) {
+                                                        if (commandsplitted.length != 4) {
+                                                                       textdown.setText("The addDriver method requires 3 arguments: the name of the driver (String) , the surname of the driver (String) and the id of his car (int)");
+                                                        }else {
+                                                                       String name= commandsplitted[1];
+                                                                       String surname= commandsplitted[2];
+                                                                       String id = commandsplitted[3];
+                                                                       
+                                                                      
+                                                                       Driver driver = new Driver(name, surname, myUber.findCarByID(id));
+                                                                       myUber.findCarByID(id).setDriver(driver);
+                                                                       myUber.driverList.add(driver);
+                                  
+                                                                       myUber.nbdrivers++;
+                                                                       
+                                                                       textdown.setText(myUber.driverList.toString() + "\n" + myUber.carList.toString());
+                                                                       
+                                                                       
+                                                                       
+                                                        }
+                                                    }
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        else if (commandsplitted[0].equals("setDriverStatus")) {
+                                                            if (commandsplitted.length != 4) {
+                                                                           textdown.setText("The setDriverStatus method requires 3 arguments: the name of the driver (String) , the surname of the driver (String) and the status (offduty, onduty or offline");
+                                                            }else {
+                                                                           String name= commandsplitted[1];
+                                                                           String surname= commandsplitted[2];
+                                                                           String status = commandsplitted[3];
+                                                                           
+                                                                           
+                                                                           if (status.equals("offduty")) {
+                                                                           myUber.findDriverByName(name, surname).setState(DriverState.OFFDUTY);
+                                                                           }
+                                                                           
+                                                                           else if (status.equals("offline")) {
+                                                                               myUber.findDriverByName(name, surname).setState(DriverState.OFFLINE);
+                                                                               }
+                                                                               
+                                                                           else if (status.equals("onduty")) {
+                                                                               myUber.findDriverByName(name, surname).setState(DriverState.ONDUTY);
+                                                                               }
+                                                                           else {
+                                                                        	   textdown.setText("Please enter a valid status : offduty, onduty or offline");
+                                                                           }
+                                                                           textdown.setText(myUber.driverList.toString());
+                                                                           
+                                                                           
+                                                                           
+                                                            }
+                                                        }
+                                                            
+                                                            
+                                                            else if (commandsplitted[0].equals("moveCar")) {
+                                                                if (commandsplitted.length != 4) {
+                                                                               textdown.setText("The moveCar method requires 3 arguments: the id of the car (String) and the longitude and latitude of the GPS ");
+                                                                }else {
+                                                                               String id = commandsplitted[1];
+                                                                               double x = Double.parseDouble(commandsplitted[2]);
+                                                                               double y = Double.parseDouble(commandsplitted[3]);
+                                                                               
+                                                                               myUber.findCarByID(id).setGPS(new GPS(x,y));
+                                                                               
+                                                                               textdown.setText( myUber.carList.toString());
+                                                                               
+                                                                               
+                                                                               
+                                                                }
+                                                            }
+                                                                
+                                                                
+                                                                else if (commandsplitted[0].equals("moveCustomer")) {
+                                                                    if (commandsplitted.length != 4) {
+                                                                                   textdown.setText("The moveCustomer method requires 3 arguments: the id of the customer (int) and the longitude and latitude of the GPS ");
+                                                                    }else {
+                                                                                   int id = Integer.parseInt(commandsplitted[1]);
+                                                                                   double x = Double.parseDouble(commandsplitted[2]);
+                                                                                   double y = Double.parseDouble(commandsplitted[3]);
+                                                                                   
+                                                                                   myUber.findCustomerByID(id).setGPS(new GPS(x,y));
+                                                                                   
+                                                                                   textdown.setText( myUber.carList.toString());
+                                                                                   
+                                                                                   
+                                                                                   
+                                                                    }
+                                                                }
+                                                                  
+                                                                    else if (commandsplitted[0].equals("display")) {
+                                                                    	
+                                                                    textdown.setText(myUber.toString()
+                                                                    		+ "\n" + myUber.customerList.toString()
+                                                                    		+ "\n" + myUber.carList.toString()
+                                                                    		+ "\n" + myUber.driverList.toString());
+                                                            }
+                                                        
+                                                        
+                                                                
                                                 
-                        }else if (commandsplitted[0].equals("requestRide")) {
+                        else if (commandsplitted[0].equals("requestRide")) {
                                                    if (commandsplitted.length != 5) {
                                          textdown.setText("The requestRide method requires 4 arguments: the id of the customer (int), the number of passengers (between 1 and 6), the longitude of the destination (between 2.22 and 2.44), the latitude (48.8 - 48.9)");
                                 }else {
