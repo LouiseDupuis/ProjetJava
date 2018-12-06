@@ -71,21 +71,15 @@ public class Customer {
 	    
 	    ConcreteRideCostVisitor visitor = new ConcreteRideCostVisitor(traffic);
 	    Map<String,Double> priceList = visitor.priceList(this, end, nbPassenger);
-	    return priceList; 	
-	    	
-	   
-	    	
-<<<<<<< HEAD
-	    	
-=======
+	    return priceList;
+    }
+
 
 	   // System.out.println("This is the list of rides that we propose :");
 	   // this.messageBox.add("This is the list of rides that we propose :");
 	   // System.out.println(priceList);
 	    // this.messageBox.add("price =" + priceList);
 
->>>>>>> Ariane12
-	    }
     
 public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
@@ -117,8 +111,7 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 	    String name = "";
 	    RideFactory factory = new RideFactory();
-<<<<<<< HEAD
-=======
+
 
 	    	
 //	    Scanner scan = new Scanner(System.in);
@@ -129,7 +122,7 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 //	    input = scan.next();
 //		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
 
->>>>>>> Ariane12
+
 	    
 	    if (nbPassenger <5) {
 	    int l = (int) (Math.random()*4);
@@ -149,10 +142,7 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
 		System.out.println(ride);
-<<<<<<< HEAD
-=======
 
->>>>>>> Ariane12
 			  
 		ride.myUber = myUber;
 		
