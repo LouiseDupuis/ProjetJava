@@ -75,7 +75,16 @@ public class Customer {
 	    	
 	   
 	    	
+<<<<<<< HEAD
 	    	
+=======
+
+	   // System.out.println("This is the list of rides that we propose :");
+	   // this.messageBox.add("This is the list of rides that we propose :");
+	   // System.out.println(priceList);
+	    // this.messageBox.add("price =" + priceList);
+
+>>>>>>> Ariane12
 	    }
     
 public synchronized void requestRandomRide(MyUber myUber, int time ) {
@@ -108,6 +117,19 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 	    String name = "";
 	    RideFactory factory = new RideFactory();
+<<<<<<< HEAD
+=======
+
+	    	
+//	    Scanner scan = new Scanner(System.in);
+//		String input;
+//		System.out.println("Please type the name of the ride you choose ");
+//		this.messageBox.add("Please type the name of the ride you choose ");
+		
+//	    input = scan.next();
+//		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
+
+>>>>>>> Ariane12
 	    
 	    if (nbPassenger <5) {
 	    int l = (int) (Math.random()*4);
@@ -127,13 +149,17 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
 		System.out.println(ride);
+<<<<<<< HEAD
+=======
+
+>>>>>>> Ariane12
 			  
 		ride.myUber = myUber;
 		
 		try {
 		 ride.price = priceList.get(name);
 		} catch(NullPointerException e) {
-			System.out.println("Problème : le ride n'a pas de type");
+			System.out.println("Problï¿½me : le ride n'a pas de type");
 		}
 		
 	    ride.customer = this;
