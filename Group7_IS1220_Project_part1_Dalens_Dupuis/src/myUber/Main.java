@@ -362,8 +362,8 @@ public class Main{
                                                                                textdown.setText("The moveCar method requires 3 arguments: the id of the car (String) and the longitude and latitude of the GPS ");
                                                                 }else {
                                                                                String id = commandsplitted[1];
-                                                                               double x = Double.parseDouble(commandsplitted[2]);
-                                                                               double y = Double.parseDouble(commandsplitted[3]);
+                                                                               int x = Integer.parseInt(commandsplitted[2]);
+                                                                               int y = Integer.parseInt(commandsplitted[3]);
                                                                                
                                                                                myUber.findCarByID(id).setGPS(new GPS(x,y));
                                                                                
@@ -380,8 +380,8 @@ public class Main{
                                                                                    textdown.setText("The moveCustomer method requires 3 arguments: the id of the customer (int) and the longitude and latitude of the GPS ");
                                                                     }else {
                                                                                    int id = Integer.parseInt(commandsplitted[1]);
-                                                                                   double x = Double.parseDouble(commandsplitted[2]);
-                                                                                   double y = Double.parseDouble(commandsplitted[3]);
+                                                                                   int x = Integer.parseInt(commandsplitted[2]);
+                                                                                   int y = Integer.parseInt(commandsplitted[3]);
                                                                                    
                                                                                    myUber.findCustomerByID(id).setGPS(new GPS(x,y));
                                                                                    
@@ -409,15 +409,15 @@ public class Main{
                                 }else {
                         	  int id = -1;
                               int time = -1;
-                              double longitude =-1;
-                              double latitude = -1;
+                              int longitude =-1;
+                              int latitude = -1;
                               
                               Map<String,Double> priceList = new HashMap<>();
                                          try {
                                         	  id = Integer.valueOf(commandsplitted[1]);
                                               time = Integer.valueOf(commandsplitted[4]);
-                                              longitude = Double.valueOf(commandsplitted[2]);
-                                              latitude = Double.valueOf(commandsplitted[3]);
+                                              longitude = Integer.valueOf(commandsplitted[2]);
+                                              latitude = Integer.valueOf(commandsplitted[3]);
                                          } catch (Exception e) {
                                       	   textdown.setText("Please enter valid numbers");
                                          };

@@ -1,22 +1,24 @@
 package myUberOthers;
 
+import java.util.Random;
 
 public class GPS {
 	
 	
-	protected double latitude ;
-	protected double longitude ;
+	protected int latitude ;
+	protected int longitude ;
 	
-	public GPS(double latitude, double longitude) {
+	public GPS(int latitude, int longitude) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 	
-	// a gps position is an (x,y) where -50<= x <= y
+	
 	public GPS() {
-		this.latitude = -50 + Math.random()*100;
-		this.longitude = -50 + Math.random()*100;
+		Random random = new Random();
+		this.latitude = random.nextInt(101) - 50;
+		this.longitude = random.nextInt(101) - 50;
 	}
 	
 
@@ -24,7 +26,7 @@ public class GPS {
 		return latitude;
 	}
 
-	public void setLatitude(double latitude) {
+	public void setLatitude(int latitude) {
 		this.latitude = latitude;
 	}
 
@@ -32,7 +34,7 @@ public class GPS {
 		return longitude;
 	}
 
-	public void setLongitude(double longitude) {
+	public void setLongitude(int longitude) {
 		this.longitude = longitude;
 	}
 	
@@ -41,20 +43,14 @@ public class GPS {
 		 /**
         Get length in km btw two GPS coordinates
         @param gps2 ending point.
-        @param gps1 starting point. 
+        
+        
+        
     */
-		if ((this.getLatitude() == gps2.getLatitude()) && (this.getLongitude() == gps2.getLongitude())) {
-			return 0;
-		}
-		else {
-			double theta = this.getLongitude() - gps2.getLongitude();
-			double dist = Math.sin(Math.toRadians(this.getLatitude())) * Math.sin(Math.toRadians(gps2.getLatitude())) + Math.cos(Math.toRadians(this.getLatitude())) * Math.cos(Math.toRadians(gps2.getLatitude())) * Math.cos(Math.toRadians(theta));
-			dist = Math.acos(dist);
-			dist = Math.toDegrees(dist);
-			dist = dist * 60 * 1.1515;
-			dist = dist * 1.609344;
-			return (dist);		
-		}
+		
+		int x = this.longitude - gps2.longitude;
+		int y = this.latitude - gps2.latitude;
+		return Math.sqrt( x^2 + y^2);		
 	}
 
 	@Override
@@ -65,3 +61,7 @@ public class GPS {
 	
 
 }
+	
+	
+
+

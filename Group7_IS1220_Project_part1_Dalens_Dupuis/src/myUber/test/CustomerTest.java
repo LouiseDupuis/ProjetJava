@@ -18,7 +18,7 @@ class CustomerTest {
 		Customer customer = new Customer();
 		MyUber univers = new MyUber(30,30);
 		univers.initiation(10,10,10);
-		Map<String,Double> priceList = customer.requestRide(2,new GPS(2.23, 48.85 ), univers,-1);
+		Map<String,Double> priceList = customer.requestRide(2,new GPS(2, 48 ), univers,-1);
 		System.out.println(priceList);
 		
 	}
