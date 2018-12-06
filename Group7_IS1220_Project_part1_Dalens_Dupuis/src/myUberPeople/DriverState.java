@@ -6,9 +6,9 @@ public enum DriverState {
 	ONARIDE("on-a-ride"),
 	ONPOOL("on-pool"),
 	OFFDUTY("off-duty");
-	final private String state;
+	final public String state;
 
-	private DriverState(String state) {
+	private  DriverState(String state) {
 		this.state = state;
 	}
 	

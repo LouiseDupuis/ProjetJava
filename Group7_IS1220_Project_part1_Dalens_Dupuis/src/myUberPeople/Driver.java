@@ -50,17 +50,18 @@ public class Driver {
 		this.messageBox = new ArrayList<String>();
 		//drivers.add(this);
 		
-		// adds a random state for the driver
-		int r = (int) (Math.random()*5);
-		if (r == 0 || r == 1) {
-			this.state = DriverState.OFFLINE;
-		}else if ( r == 2) {
-			this.state = DriverState.OFFDUTY;
-		}else {
-			this.state = DriverState.ONDUTY;
-		}
+		this.state = DriverState.OFFDUTY;
 	}
 	
+	
+	public Driver(String name, String surname, Car car) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.car = car;
+	}
+
+
 	public void Parameters() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Change your name: ");
@@ -179,8 +180,13 @@ public class Driver {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "Driver [name=" + name + ", surname=" + surname + ", driverID=" + driverID + ", state=" + state
 				+ ", balance=" + balance + ", nbRide=" + nbRide +  ", rating=" + rating + ", gps=" + gps + ", ]";
+=======
+		return "Driver [name=" + name + ", surname=" + surname + ", state=" + state +
+				"]";
+>>>>>>> origin/louise10
 	}
 
 	public String distancetoString(GPS position){

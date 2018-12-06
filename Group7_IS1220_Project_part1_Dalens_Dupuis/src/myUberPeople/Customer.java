@@ -287,12 +287,15 @@ public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	public String toStringWithPosition() {
 		return "Customer [ name=" + name + ", surname=" + surname + ", gps=" + gps +
 				"]";
+<<<<<<< HEAD
 	}
 
 
 
 	public void setBalance(Double balance) {
 		this.balance = balance;
+=======
+>>>>>>> origin/louise10
 	}
 
 }
