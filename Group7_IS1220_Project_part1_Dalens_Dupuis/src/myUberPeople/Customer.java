@@ -86,13 +86,7 @@ public class Customer {
 	    	
 	   
 	    	
-<<<<<<< HEAD
-	    System.out.println("This is the list of rides that we propose :");
-	    this.messageBox.add("This is the list of rides that we propose :");
-	    System.out.println(priceList);
-	    this.messageBox.add("price =" + priceList);
-=======
->>>>>>> origin/louise10
+
 	    	
 	    }
     

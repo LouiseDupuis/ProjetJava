@@ -276,18 +276,18 @@ public class Main{
                                                 
                                  }         else if (commandsplitted[0].equals("requestRide")) {
                                                    if (commandsplitted.length != 5) {
-                                         textdown.setText("The requestRide method requires 4 arguments: the id of the customer (int), the number of passengers (between 1 and 6), the longitude of the destination (between 2.22 and 2.44), the latitude (48.8 - 48.9)");
+                                         textdown.setText("The requestRide method requires 4 arguments: the id of the customer (int), the number of passengers (between 1 and 6), the longitude and the latitude of the destination (between -50 and 50)");
                           }else {
                         	  int id = -1;
                               int nb = -1;
-                              double longitude =-1;
-                              double latitude = -1;
+                              int longitude =-1;
+                              int latitude = -1;
                               Map<String,Double> priceList = new HashMap<>();
                                          try {
                                         	  id = Integer.valueOf(commandsplitted[1]);
                                               nb = Integer.valueOf(commandsplitted[2]);
-                                              longitude = Double.valueOf(commandsplitted[3]);
-                                              latitude = Double.valueOf(commandsplitted[4]);
+                                              longitude = Integer.valueOf(commandsplitted[3]);
+                                              latitude = Integer.valueOf(commandsplitted[4]);
                                          } catch (Exception e) {
                                       	   textdown.setText("Please enter valid numbers");
                                          };
