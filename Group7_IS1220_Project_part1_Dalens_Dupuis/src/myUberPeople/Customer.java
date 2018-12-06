@@ -125,16 +125,7 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 	    String name = "";
 	    RideFactory factory = new RideFactory();
-<<<<<<< HEAD
-	    	
-	    Scanner scan = new Scanner(System.in);
-		String input;
-		System.out.println("Please type the name of the ride you choose ");
-		this.messageBox.add("Please type the name of the ride you choose ");
-		
-	    input = scan.next();
-		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
-=======
+
 	    
 	    if (nbPassenger <5) {
 	    int l = (int) (Math.random()*4);
@@ -154,7 +145,7 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
 		System.out.println(ride);
->>>>>>> origin/louise10
+
 			  
 		ride.myUber = myUber;
 		
