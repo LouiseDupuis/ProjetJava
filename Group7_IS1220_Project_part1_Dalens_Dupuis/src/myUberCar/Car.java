@@ -46,8 +46,8 @@ public abstract class Car {
 	}
 	@Override
 	public String toString() {
-		return "Car [carID=" + carID + ", nbSeats=" + nbSeats + ", freeSeats=" + freeSeats + ", GPS=" + GPS
-				+ ", Driver=" + Driver + "]";
+		return "Car [carID=" + carID  + ", GPS=" + GPS
+				+  "]";
 	} 
 	
 	

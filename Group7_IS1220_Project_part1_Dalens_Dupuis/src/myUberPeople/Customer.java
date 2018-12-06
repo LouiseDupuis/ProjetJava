@@ -54,22 +54,18 @@ public class Customer {
 	// it presents the list of offered rides and their price 
 
 	
-    public synchronized Map<String,Double> requestRide(int nbPassenger, GPS end, MyUber myUber ) {
+    public synchronized Map<String,Double> requestRide(int nbPassenger, GPS end, MyUber myUber, int time ) {
 	    
 	    
 	    
 	    // it selects a (random) traffic status 
 	    
-	    TrafficStatus traffic = TrafficStatus.MEDIUM;
-	    		
-	    int r = (int) (Math.random()*3);
-		if (r == 0 ) {
-			traffic = TrafficStatus.LOW;
-		}else if ( r == 1) {
-			traffic = TrafficStatus.MEDIUM;
-		}else {
-			traffic = TrafficStatus.HEAVY;
-		}
+    	TrafficStatus traffic = TrafficStatus.set();
+ 	   if (time >= 0) {
+       	 traffic = TrafficStatus.set(time, 0);
+       	 
+        };
+        System.out.println(traffic);
 	    
 	    // it shows to the client the prices of the different rides available
 	    
@@ -82,7 +78,7 @@ public class Customer {
 	    	
 	    }
     
-public synchronized void requestRandomRide(MyUber myUber ) {
+public synchronized void requestRandomRide(MyUber myUber, int time ) {
 	    
 	    // definition of a random number of passengers (between 1 and 6)
 	    int nbPassenger = (int) (Math.random()*6) + 1;
@@ -96,16 +92,11 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 	    // it selects a (random) traffic status 
 	    
-	    TrafficStatus traffic = TrafficStatus.MEDIUM;
-	    		
-	    int r = (int) (Math.random()*3);
-		if (r == 0 ) {
-			traffic = TrafficStatus.LOW;
-		}else if ( r == 1) {
-			traffic = TrafficStatus.MEDIUM;
-		}else {
-			traffic = TrafficStatus.HEAVY;
-		}
+	   TrafficStatus traffic = TrafficStatus.set();
+	   if (time >= 0) {
+      	 traffic = TrafficStatus.set(time, 0);
+      	 
+       };
 	    
 	    // computing of the prices
 	    

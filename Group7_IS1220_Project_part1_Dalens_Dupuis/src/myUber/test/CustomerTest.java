@@ -2,6 +2,8 @@ package myUber.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 
 import myUber.MyUber;
@@ -14,11 +16,10 @@ class CustomerTest {
 	@Test
 	final void testRequestRide() {
 		Customer customer = new Customer();
-		MyUber univers = new MyUber();
+		MyUber univers = new MyUber(15,15);
 		univers.initiation(5,5,5);
-		customer.requestRide(2,new GPS(), univers);
-		System.out.println(univers.requestedRides);
-		assertEquals(1, univers.requestedRides.size());
+		Map<String,Double> priceList = customer.requestRide(2,new GPS(), univers,3);
+		System.out.println(priceList);
 		
 	}
 

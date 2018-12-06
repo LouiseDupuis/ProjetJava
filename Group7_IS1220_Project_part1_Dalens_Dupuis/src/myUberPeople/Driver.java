@@ -158,8 +158,8 @@ public class Driver {
 
 	@Override
 	public String toString() {
-		return "Driver [name=" + name + ", surname=" + surname + ", driverID=" + driverID + ", state=" + state
-				+ ", balance=" + balance + ", nbRide=" + nbRide + ", gps=" + gps + ", ]";
+		return "Driver [name=" + name + ", surname=" + surname + ", state=" + state +
+				"]";
 	}
 
 	public String distancetoString(GPS position){

@@ -191,7 +191,7 @@ public class Main{
                                                            // one of them is chosen from command line, the others are random 
                                                            
                                                            for(int i = 0; i < 9; i++) {
-                                                        	   myUber.customerList.get(i).requestRandomRide(myUber);
+                                                        	   myUber.customerList.get(i).requestRandomRide(myUber, -1);
                                                            }
                                                            
 
@@ -243,11 +243,11 @@ public class Main{
                                                                           textdown.setText("The setup method requires 4 arguments: the numbers of standard, berline and van cars (int) and the number of customers (int)");
                                                            }else {
                                                                           try {
-                                                                          int n1= Integer.parseInt(commandsplitted[1]);
+                                                                          int n1= Integer.parseInt(commandsplitted[4]);
                                                                           
-                                                                          int nbStandard = Integer.parseInt(commandsplitted[2]);
-                                                                          int nbBerline = Integer.parseInt(commandsplitted[3]);
-                                                                          int nbVan = Integer.parseInt(commandsplitted[4]);
+                                                                          int nbStandard = Integer.parseInt(commandsplitted[1]);
+                                                                          int nbBerline = Integer.parseInt(commandsplitted[2]);
+                                                                          int nbVan = Integer.parseInt(commandsplitted[3]);
                                                                           int n2= nbStandard + nbBerline + nbVan;
                                                                           myUber= new MyUber(n1,n2);
                                                                           myUber.initiation(nbStandard, nbBerline, nbVan);
@@ -385,7 +385,7 @@ public class Main{
                                                                                    
                                                                                    myUber.findCustomerByID(id).setGPS(new GPS(x,y));
                                                                                    
-                                                                                   textdown.setText( myUber.carList.toString());
+                                                                                   textdown.setText( myUber.customerList.toString());
                                                                                    
                                                                                    
                                                                                    
@@ -403,47 +403,45 @@ public class Main{
                                                         
                                                                 
                                                 
-                        else if (commandsplitted[0].equals("requestRide")) {
+                        else if (commandsplitted[0].equals("ask4price")) {
                                                    if (commandsplitted.length != 5) {
-                                         textdown.setText("The requestRide method requires 4 arguments: the id of the customer (int), the number of passengers (between 1 and 6), the longitude of the destination (between 2.22 and 2.44), the latitude (48.8 - 48.9)");
+                                         textdown.setText("The requestRide method requires 4 arguments: the id of the customer (int), the longitude of the destination (between 2.22 and 2.44), the latitude (48.8 - 48.9) and the time (int)");
                                 }else {
                         	  int id = -1;
-                              int nb = -1;
+                              int time = -1;
                               double longitude =-1;
                               double latitude = -1;
+                              TrafficStatus traffic = TrafficStatus.set();
                               Map<String,Double> priceList = new HashMap<>();
                                          try {
                                         	  id = Integer.valueOf(commandsplitted[1]);
-                                              nb = Integer.valueOf(commandsplitted[2]);
-                                              longitude = Double.valueOf(commandsplitted[3]);
-                                              latitude = Double.valueOf(commandsplitted[4]);
+                                              time = Integer.valueOf(commandsplitted[4]);
+                                              longitude = Double.valueOf(commandsplitted[2]);
+                                              latitude = Double.valueOf(commandsplitted[3]);
                                          } catch (Exception e) {
                                       	   textdown.setText("Please enter valid numbers");
                                          };
+                                         
+                                         
+                                         
+                                         
                                          try {
-                                        	 priceList = myUber.customerList.get(id -1).requestRide(nb, new GPS(longitude, latitude),this.myUber);
+                                        	 System.out.println(myUber.customerList.get(id -1));
+                                        	 System.out.println(priceList);
+                                        	 priceList = myUber.customerList.get(id -1).requestRide(1, new GPS(longitude, latitude),this.myUber, time);
                                          }catch(ArrayIndexOutOfBoundsException e) {
                                         	 textdown.setText("No customer with such id");
                                          }
-                                         textdown.setText("This is the list of rides that we propose + priceList"
+                                         textdown.setText("This is the list of rides that we propose" + priceList
                                          		);
                                          
                                          //creation of a new generic ride to stock the info while the customer chooses
                                        
-                                         UndefinedRide ride = new UndefinedRide(myUber.customerList.get(id - 1).getGPS(), new GPS(longitude, latitude),nb, priceList);
+                                         UndefinedRide ride = new UndefinedRide(myUber.customerList.get(id - 1).getGPS(), new GPS(longitude, latitude),1, priceList);
                                          ride.myUber = myUber;
                                          ride.customer = myUber.customerList.get(id - 1);
                                          
                                          this.waitingChoiceRide.put(id,ride);
-                                         
-                                        
-                                 	    
-                                        		 
-                                        	
-                                         
-                                         
-                                         
-                                         
                                          
                                          
                           }
