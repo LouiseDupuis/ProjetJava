@@ -13,10 +13,10 @@ public class GPS {
 		this.longitude = longitude;
 	}
 	
-	// on suppose à Paris soit long 2.22 et 2.44 et lat entre 48.8 et 48.9
+	// a gps position is an (x,y) where -50<= x <= y
 	public GPS() {
-		this.latitude = 48.8 + Math.random()*0.1;
-		this.longitude = 2.22 + Math.random()*0.22;
+		this.latitude = -50 + Math.random()*100;
+		this.longitude = -50 + Math.random()*100;
 	}
 	
 

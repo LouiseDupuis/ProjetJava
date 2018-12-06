@@ -411,7 +411,7 @@ public class Main{
                               int time = -1;
                               double longitude =-1;
                               double latitude = -1;
-                              TrafficStatus traffic = TrafficStatus.set();
+                              
                               Map<String,Double> priceList = new HashMap<>();
                                          try {
                                         	  id = Integer.valueOf(commandsplitted[1]);
@@ -427,8 +427,9 @@ public class Main{
                                          
                                          try {
                                         	 System.out.println(myUber.customerList.get(id -1));
+                                        	 
+                                        	 priceList = myUber.customerList.get(id -1).requestRide(1, new GPS(longitude, latitude), this.myUber, time);
                                         	 System.out.println(priceList);
-                                        	 priceList = myUber.customerList.get(id -1).requestRide(1, new GPS(longitude, latitude),this.myUber, time);
                                          }catch(ArrayIndexOutOfBoundsException e) {
                                         	 textdown.setText("No customer with such id");
                                          }
