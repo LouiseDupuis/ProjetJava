@@ -86,14 +86,12 @@ public class Customer {
 	    	
 	   
 	    	
-<<<<<<< HEAD
-	    System.out.println("This is the list of rides that we propose :");
-	    this.messageBox.add("This is the list of rides that we propose :");
-	    System.out.println(priceList);
-	    this.messageBox.add("price =" + priceList);
-=======
->>>>>>> origin/louise10
-	    	
+
+	   // System.out.println("This is the list of rides that we propose :");
+	   // this.messageBox.add("This is the list of rides that we propose :");
+	   // System.out.println(priceList);
+	    // this.messageBox.add("price =" + priceList);
+
 	    }
     
 public synchronized void requestRandomRide(MyUber myUber ) {
@@ -131,16 +129,16 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 	    String name = "";
 	    RideFactory factory = new RideFactory();
-<<<<<<< HEAD
+
 	    	
-	    Scanner scan = new Scanner(System.in);
-		String input;
-		System.out.println("Please type the name of the ride you choose ");
-		this.messageBox.add("Please type the name of the ride you choose ");
+//	    Scanner scan = new Scanner(System.in);
+//		String input;
+//		System.out.println("Please type the name of the ride you choose ");
+//		this.messageBox.add("Please type the name of the ride you choose ");
 		
-	    input = scan.next();
-		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
-=======
+//	    input = scan.next();
+//		Ride ride = factory.createRide(input, this.getGps(), end, nbPassenger);
+
 	    
 	    if (nbPassenger <5) {
 	    int l = (int) (Math.random()*4);
@@ -160,14 +158,14 @@ public synchronized void requestRandomRide(MyUber myUber ) {
 	    
 		Ride ride = factory.createRide(name, this.getGps(), end, nbPassenger);
 		System.out.println(ride);
->>>>>>> origin/louise10
+
 			  
 		ride.myUber = myUber;
 		
 		try {
 		 ride.price = priceList.get(name);
 		} catch(NullPointerException e) {
-			System.out.println("Problème : le ride n'a pas de type");
+			System.out.println("Problï¿½me : le ride n'a pas de type");
 		}
 		
 	    ride.customer = this;
